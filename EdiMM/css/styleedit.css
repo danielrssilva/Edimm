@@ -22,10 +22,8 @@ html, body{
   font-family: 'Open Sans',"HelveticaNeue", "Helvetica Neue", Helvetica, Arial,sans-serif;
 }
 .save-alert{
-    background: #9e9e9e;
-}
-.save-alert a{
-    color: #befbff;
+    background: hsl(0, 0%, 100%);
+    color: black;
 }
 .fixed-bar{
     float: right;
@@ -33,11 +31,17 @@ html, body{
 .navbar-nav{
     height: 55px;
 }
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #e7e7e700;
+}
 .buttonToolbar.li-label{
     cursor: default;
 }
 .li a.buttonToolbar:hover{
     color: #000
+}
+#habMedida,#habFont{
+    cursor: pointer;
 }
 div#svgDiv{
   top: 0%;
@@ -82,7 +86,10 @@ div#nav li a:hover{
 }
 .line{
     background: #000;
+    vertical-align: middle;
     width: 24px;
+    margin: 8px 0;
+    border-radius: 2px;
 }
 .line01{
     height: 1px;

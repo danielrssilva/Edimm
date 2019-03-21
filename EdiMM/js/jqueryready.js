@@ -51,6 +51,20 @@
 				lineWeightDropdown.appendChild(li);
 			}
 		})();
+		//<li><a href="javascript:setSizeText(10);" id="tamanho10">10</a></li>
+		(function(){
+			var textSize = document.getElementById("text-size");
+			for(i=10;i<=48;){
+				var li = document.createElement("li");
+				var liA = document.createElement("a");
+				liA.setAttribute("href", "javascript:setSizeText("+i+");");
+				liA.setAttribute("id", "tamanho"+i);
+				liA.append(i);
+				li.appendChild(liA); 
+				textSize.appendChild(li);
+				i += 2;
+			}
+		})();
 		$( document ).ready(function(){
 
 			$("#habFont").hide("slow");   	  
@@ -266,62 +280,52 @@
 
 			$("#line01").click(function(){
 				$("#habEspessSpan").show("slow"); 
-				var img = $(this).find("img").clone();
-				$("#linha").html(img);
+				$("#linha").html("<div class='line line01'></div>");
 			});
 
 			$("#line02").click(function(){
 				$("#habEspessSpan").show("slow"); 
-				var img = $(this).find("img").clone();
-				$("#linha").html(img);
+				$("#linha").html("<div class='line line02'></div>");
 			});
 
 			$("#line03").click(function(){
 				$("#habEspessSpan").show("slow"); 
-				var img = $(this).find("img").clone();
-				$("#linha").html(img);
+				$("#linha").html("<div class='line line03'></div>");
 			});
 
 			$("#line04").click(function(){
 				$("#habEspessSpan").show("slow"); 
-				var img = $(this).find("img").clone();
-				$("#linha").html(img);
+				$("#linha").html("<div class='line line04'></div>");
 			});
 
 			$("#line05").click(function(){
 				$("#habEspessSpan").show("slow"); 
-				var img = $(this).find("img").clone();
-				$("#linha").html(img);
+				$("#linha").html("<div class='line line05'></div>");
 			});
 
 			$("#line06").click(function(){
 				$("#habEspessSpan").show("slow"); 
-				var img = $(this).find("img").clone();
-				$("#linha").html(img);
+				$("#linha").html("<div class='line line06'></div>");
 			});
 
 			$("#line07").click(function(){
 				$("#habEspessSpan").show("slow"); 
-				var img = $(this).find("img").clone();
-				$("#linha").html(img);
+				$("#linha").html("<div class='line line07'></div>");
 			});
 
 			$("#line08").click(function(){
 				$("#habEspessSpan").show("slow"); 
-				var img = $(this).find("img").clone();
-				$("#linha").html(img);
+				$("#linha").html("<div class='line line08'></div>");
 			});
 
 			$("#line09").click(function(){
 				$("#habEspessSpan").show("slow"); 
-				var img = $(this).find("img").clone();
-				$("#linha").html(img);
+				$("#linha").html("<div class='line line09'></div>");
 			});
 
 			$("#line10").click(function(){
 				$("#habEspessSpan").show("slow"); 
-				var img = $(this).find("img").clone();
-				$("#linha").html(img);
+				$("#linha").html("<div class='line line10'></div>");
 			});
 
 	//======================================================================================

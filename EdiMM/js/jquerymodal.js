@@ -2289,8 +2289,8 @@
 				imageArray[idTouch].setAttribute('x', startX); // Add the position x of the element
 				imageArray[idTouch].setAttribute('y', startY); // Add the position y of the element
 				imageArray[idTouch].setAttribute('fill', "none"); // Add background color to element
-				imageArray[idTouch].setAttribute('width', "200px"); // Add width element
-				imageArray[idTouch].setAttribute('height', "300px"); // Add height element
+				imageArray[idTouch].setAttribute('width', 0); // Add width element
+				imageArray[idTouch].setAttribute('height', 0); // Add height element
 				imageArray[idTouch].setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', receivedImage); // Add to receivedImage
 				svg.appendChild(imageArray[idTouch]); // Add element to svg
 				isMousePressed = true; // Get true
@@ -3157,7 +3157,7 @@
 		function saveIt() { // Function responsible for saving the layout to the database
 			var serializer = new XMLSerializer();
 			var xmlString = serializer.serializeToString(layer);
-			var elemento = document.getElementById('save-alert');
+			var saveAlert = document.getElementById('save-alert');
 
 			saveImage(); // Save layout
 
@@ -3167,10 +3167,9 @@
 			xmlhttp.open("POST","dml/armazena.php",true); // Call file armazena.php
 			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			xmlhttp.send("id="+id+"&tag_svg="+encoded); // Pass the id and layout to be stored
-			//alert('Salvo com sucesso.\n\nCodigo de Acesso: '+id); // Alerts the user access code
-			elemento.innerHTML = '<div class="alert save-alert alert-dismissible" role="alert" id="save-alert"> <p>Salvo com sucesso. Codigo de Acesso: <a href="https://zephyrus.nied.unicamp.br/BackupAllEdiMM/EdiMM/?'+id+'" target="_blanck">'+id+'</a></p><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>';
+			// Alerts the user access code
+			saveAlert.innerHTML = '<div class="alert save-alert alert-dismissible" role="alert" id="save-alert"> <p>Salvo com sucesso. <a href="https://zephyrus.nied.unicamp.br/BackupAllEdiMM/EdiMM/?'+id+'" target="_blank">Clique aqui para acessar.</a></p><p>Código: '+id+'</p><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>';
 		}
-
 		//============================================================================
 
 		function pdfIt() { // Function responsible for generating the PDF
