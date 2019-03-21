@@ -28,7 +28,29 @@
 		var negrito=false;
 		var sublinhado=false;
 		var italico=false;
-		var lineWeight = [1,2,3,4,5,6,7,8,9,10];
+
+		// Adicionar espessura da linha
+		(function(){
+			var lineWeightDropdown = document.getElementById("line-weight");
+			for(i=1;i<=10;i++){
+				var li = document.createElement("li");
+				var liA = document.createElement("a");
+				var liDiv = document.createElement("div");
+				liA.setAttribute("href", "javascript:setWidth("+i+");");
+				liA.setAttribute("title", ""+i+"px");
+				if(i<10){
+					liA.setAttribute("id", "line0"+i);
+					liDiv.setAttribute("class", "line line0"+i);
+				}
+				else{
+					liA.setAttribute("id", "line"+i)
+					liDiv.setAttribute("class", "line line"+i);
+				}
+				liA.appendChild(liDiv);
+				li.appendChild(liA); 
+				lineWeightDropdown.appendChild(li);
+			}
+		})();
 		$( document ).ready(function(){
 
 			$("#habFont").hide("slow");   	  
