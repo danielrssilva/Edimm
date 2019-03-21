@@ -27,9 +27,16 @@ html, body{
 }
 .fixed-bar{
     float: right;
+    margin-right: 180px;
 }
 .navbar-nav{
     height: 55px;
+}
+.container{
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    margin-left: 100px;
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border-color: #e7e7e700;
@@ -42,6 +49,7 @@ html, body{
 }
 #habMedida,#habFont{
     cursor: pointer;
+    color: black;
 }
 div#svgDiv{
   top: 0%;
