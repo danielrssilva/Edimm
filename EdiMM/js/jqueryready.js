@@ -31,12 +31,12 @@
 		var lineWeight = [1,2,3,4,5,6,7,8,9,10];
 		$( document ).ready(function(){
 
-			$("#habFont").hide("slow");   	  <!-- Esconder -->
-			$("#habEstilo").hide("slow"); 	  <!-- Esconder -->
-			$("#habMedida").hide("slow"); 	  <!-- Esconder -->
-			$("#habOpcao").hide("slow");  	  <!-- Esconder -->
-			$("#habMedidaSpan").hide("slow"); <!-- Esconder -->
-			$("#habFontSpan").hide("slow");   <!-- Esconder -->
+			$("#habFont").hide("slow");   	  
+			$("#habEstilo").hide("slow"); 	  
+			$("#habMedida").hide("slow"); 	  
+			$("#habOpcao").hide("slow");  	  
+			$("#habMedidaSpan").hide("slow"); 
+			$("#habFontSpan").hide("slow");   
 
 			var linha = document.getElementById("line03");
 
@@ -49,255 +49,255 @@
 			document.getElementById("draw").className = "btn btn-default";
 
 			$("#arial").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Arial");
 			});
 
 			$("#comicsans").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Comic Sans");
 			});
 
 			$("#georgia").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Georgia");
 			});
 
 			$("#impact").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Impact");
 			});
 
 			$("#lucida").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Lucida");
 			});
 
 			$("#lucidasans").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Lucidasans");
 			});
 
 			$("#monospace").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Monospace");
 			});
 
 			$("#opendyslexic").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Opendys Lexic");
 			});
 
 			$("#palatino").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Palatino");
 			});
 
 			$("#sansserif").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Sansserif");
 			});
 
 			$("#serif").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Serif");
 			});
 
 			$("#symbol").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Symbol");
 			});
 
 			$("#tahoma").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Tahoma");
 			});
 
 			$("#timesnewroman").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Times New Roman");
 			});
 
 			$("#trebuchet").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Trebuchet");
 			});
 
 			$("#verdana").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Verdana");
 			});
 
 			$("#webdings").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Webdings");
 			});
 
 			$("#wingdings").click(function(){
-				$("#habFontSpan").show("slow"); <!-- Aparecer -->
+				$("#habFontSpan").show("slow"); 
 				$("#font").html("Wingdings");
 			});
 
 	//======================================================================================
 
 			$("#tamanho10").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("10");
 			});
 
 			$("#tamanho12").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("12");
 			});
 
 			$("#tamanho14").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("14");
 			});
 
 			$("#tamanho16").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("16");
 			});
 
 			$("#tamanho18").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("18");
 			});
 
 			$("#tamanho20").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("20");
 			});
 
 			$("#tamanho22").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("22");
 			});
 
 			$("#tamanho24").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("24");
 			});
 
 			$("#tamanho26").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("26");
 			});
 
 			$("#tamanho28").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("28");
 			});
 
 			$("#tamanho30").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("30");
 			});
 
 			$("#tamanho32").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("32");
 			});
 
 			$("#tamanho34").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("34");
 			});
 
 			$("#tamanho36").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("36");
 			});
 
 			$("#tamanho38").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("38");
 			});
 
 			$("#tamanho40").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("40");
 			});
 
 			$("#tamanho42").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("42");
 			});
 
 			$("#tamanho44").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("44");
 			});
 
 			$("#tamanho46").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("46");
 			});
 
 			$("#tamanho48").click(function(){
-				$("#habMedidaSpan").show("slow"); <!-- Aparecer -->
+				$("#habMedidaSpan").show("slow"); 
 				$("#medida").html("48");
 			});
 
 	//======================================================================================
 
 			$("#line01").click(function(){
-				$("#habEspessSpan").show("slow"); <!-- Aparecer -->
+				$("#habEspessSpan").show("slow"); 
 				var img = $(this).find("img").clone();
 				$("#linha").html(img);
 			});
 
 			$("#line02").click(function(){
-				$("#habEspessSpan").show("slow"); <!-- Aparecer -->
+				$("#habEspessSpan").show("slow"); 
 				var img = $(this).find("img").clone();
 				$("#linha").html(img);
 			});
 
 			$("#line03").click(function(){
-				$("#habEspessSpan").show("slow"); <!-- Aparecer -->
+				$("#habEspessSpan").show("slow"); 
 				var img = $(this).find("img").clone();
 				$("#linha").html(img);
 			});
 
 			$("#line04").click(function(){
-				$("#habEspessSpan").show("slow"); <!-- Aparecer -->
+				$("#habEspessSpan").show("slow"); 
 				var img = $(this).find("img").clone();
 				$("#linha").html(img);
 			});
 
 			$("#line05").click(function(){
-				$("#habEspessSpan").show("slow"); <!-- Aparecer -->
+				$("#habEspessSpan").show("slow"); 
 				var img = $(this).find("img").clone();
 				$("#linha").html(img);
 			});
 
 			$("#line06").click(function(){
-				$("#habEspessSpan").show("slow"); <!-- Aparecer -->
+				$("#habEspessSpan").show("slow"); 
 				var img = $(this).find("img").clone();
 				$("#linha").html(img);
 			});
 
 			$("#line07").click(function(){
-				$("#habEspessSpan").show("slow"); <!-- Aparecer -->
+				$("#habEspessSpan").show("slow"); 
 				var img = $(this).find("img").clone();
 				$("#linha").html(img);
 			});
 
 			$("#line08").click(function(){
-				$("#habEspessSpan").show("slow"); <!-- Aparecer -->
+				$("#habEspessSpan").show("slow"); 
 				var img = $(this).find("img").clone();
 				$("#linha").html(img);
 			});
 
 			$("#line09").click(function(){
-				$("#habEspessSpan").show("slow"); <!-- Aparecer -->
+				$("#habEspessSpan").show("slow"); 
 				var img = $(this).find("img").clone();
 				$("#linha").html(img);
 			});
 
 			$("#line10").click(function(){
-				$("#habEspessSpan").show("slow"); <!-- Aparecer -->
+				$("#habEspessSpan").show("slow"); 
 				var img = $(this).find("img").clone();
 				$("#linha").html(img);
 			});
@@ -357,15 +357,15 @@
 					move=false;
 				}
 
-				$("#paletaCores").hide("slow");    <!-- Esconder -->
-				$("#habOpcao").hide("slow");       <!-- Esconder -->
-				$("#habMedida").hide("slow");      <!-- Esconder -->
-				$("#habFont").hide("slow");        <!-- Esconder -->
-				$("#habEstilo").hide("slow");      <!-- Esconder -->
-				$("#habEspessSpan").hide("slow");  <!-- Esconder -->
-				$("#habMedidaSpan").hide("slow");  <!-- Esconder -->
-				$("#habFontSpan").hide("slow");    <!-- Esconder -->
-				$("#habEspess").hide("slow");      <!-- Esconder -->
+				$("#paletaCores").hide("slow");    
+				$("#habOpcao").hide("slow");       
+				$("#habMedida").hide("slow");      
+				$("#habFont").hide("slow");        
+				$("#habEstilo").hide("slow");      
+				$("#habEspessSpan").hide("slow");  
+				$("#habMedidaSpan").hide("slow");  
+				$("#habFontSpan").hide("slow");    
+				$("#habEspess").hide("slow");      
 
 				document.getElementById("delete").className = "desabilitado";
 				del=false;
@@ -393,15 +393,15 @@
 					del=false;
 				}
 
-				$("#paletaCores").hide("slow");    <!-- Esconder -->
-				$("#habOpcao").hide("slow");       <!-- Esconder -->
-				$("#habMedida").hide("slow");      <!-- Esconder -->
-				$("#habFont").hide("slow");        <!-- Esconder -->
-				$("#habEstilo").hide("slow");      <!-- Esconder -->
-				$("#habEspessSpan").hide("slow");  <!-- Esconder -->
-				$("#habMedidaSpan").hide("slow");  <!-- Esconder -->
-				$("#habFontSpan").hide("slow");    <!-- Esconder -->
-				$("#habEspess").hide("slow");      <!-- Esconder -->
+				$("#paletaCores").hide("slow");    
+				$("#habOpcao").hide("slow");       
+				$("#habMedida").hide("slow");      
+				$("#habFont").hide("slow");        
+				$("#habEstilo").hide("slow");      
+				$("#habEspessSpan").hide("slow");  
+				$("#habMedidaSpan").hide("slow");  
+				$("#habFontSpan").hide("slow");    
+				$("#habEspess").hide("slow");      
 
 				document.getElementById("move").className = "desabilitado";
 				move=false;
@@ -431,15 +431,15 @@
 
 			$("#keyboard").click(function(){
 
-				$("#habFont").show("slow");   	   <!-- Aparecer -->
-				$("#habEstilo").show("slow"); 	   <!-- Aparecer -->
-				$("#habMedida").show("slow"); 	   <!-- Aparecer -->
-				$("#habFontSpan").show("slow");    <!-- Aparecer -->
-				$("#habMedidaSpan").show("slow");  <!-- Aparecer -->
-				$("#paletaCores").show("slow");    <!-- Aparecer -->
-				$("#habEspessSpan").hide("slow");  <!-- Esconder -->
-				$("#habEspess").hide("slow"); 	   <!-- Esconder -->
-				$("#habOpcao").hide("slow");  	   <!-- Esconder -->
+				$("#habFont").show("slow");   	   
+				$("#habEstilo").show("slow"); 	   
+				$("#habMedida").show("slow"); 	   
+				$("#habFontSpan").show("slow");    
+				$("#habMedidaSpan").show("slow");  
+				$("#paletaCores").show("slow");    
+				$("#habEspessSpan").hide("slow");  
+				$("#habEspess").hide("slow"); 	   
+				$("#habOpcao").hide("slow");  	   
 
 				document.getElementById("circle").className = "desabilitado";
 				document.getElementById("drop").className = "desabilitado";
@@ -469,15 +469,15 @@
 
 			$("#keybox").click(function(){
 
-				$("#habFont").show("slow");   	   <!-- Aparecer -->
-				$("#habEstilo").show("slow"); 	   <!-- Aparecer -->
-				$("#habMedida").show("slow"); 	   <!-- Aparecer -->
-				$("#habFontSpan").show("slow");    <!-- Aparecer -->
-				$("#habMedidaSpan").show("slow");  <!-- Aparecer -->
-				$("#paletaCores").show("slow");    <!-- Aparecer -->
-				$("#habEspessSpan").hide("slow");  <!-- Esconder -->
-				$("#habEspess").hide("slow"); 	   <!-- Esconder -->
-				$("#habOpcao").hide("slow");  	   <!-- Esconder -->
+				$("#habFont").show("slow");   	   
+				$("#habEstilo").show("slow"); 	   
+				$("#habMedida").show("slow"); 	   
+				$("#habFontSpan").show("slow");    
+				$("#habMedidaSpan").show("slow");  
+				$("#paletaCores").show("slow");    
+				$("#habEspessSpan").hide("slow");  
+				$("#habEspess").hide("slow"); 	   
+				$("#habOpcao").hide("slow");  	   
 
 				document.getElementById("circle").className = "desabilitado";
 				document.getElementById("drop").className = "desabilitado";
@@ -499,15 +499,15 @@
 			});
 
 			$("#draw").click(function(){
-				$("#habFont").hide("slow");   	   <!-- Esconder -->
-				$("#habEstilo").hide("slow"); 	   <!-- Esconder -->
-				$("#habMedida").hide("slow");	   <!-- Esconder -->
-				$("#habOpcao").hide("slow"); 	   <!-- Esconder -->
-				$("#habMedidaSpan").hide("slow");  <!-- Esconder -->
-				$("#habFontSpan").hide("slow");    <!-- Esconder -->
-				$("#paletaCores").show("slow");    <!-- Aparecer -->
-				$("#habEspessSpan").show("slow");  <!-- Aparecer -->
-				$("#habEspess").show("slow"); 	   <!-- Aparecer -->
+				$("#habFont").hide("slow");   	   
+				$("#habEstilo").hide("slow"); 	   
+				$("#habMedida").hide("slow");	   
+				$("#habOpcao").hide("slow"); 	   
+				$("#habMedidaSpan").hide("slow");  
+				$("#habFontSpan").hide("slow");    
+				$("#paletaCores").show("slow");    
+				$("#habEspessSpan").show("slow");  
+				$("#habEspess").show("slow"); 	   
 
 				document.getElementById("circle").className = "desabilitado";
 				document.getElementById("drop").className = "desabilitado";
@@ -537,15 +537,15 @@
 			});
 
 			$("#geometricshapes").click(function(){
-				$("#habFont").hide("slow");   	  <!-- Esconder -->
-				$("#habEstilo").hide("slow"); 	  <!-- Esconder -->
-				$("#habMedida").hide("slow"); 	  <!-- Esconder -->
-				$("#habMedidaSpan").hide("slow"); <!-- Esconder -->
-				$("#habFontSpan").hide("slow");   <!-- Esconder -->
-				$("#paletaCores").show("slow");   <!-- Aparecer -->
-				$("#habEspess").show("slow"); 	  <!-- Aparecer -->
-				$("#habOpcao").show("slow"); 	  <!-- Aparecer -->
-				$("#habEspessSpan").show("slow"); <!-- Aparecer -->
+				$("#habFont").hide("slow");   	  
+				$("#habEstilo").hide("slow"); 	  
+				$("#habMedida").hide("slow"); 	  
+				$("#habMedidaSpan").hide("slow"); 
+				$("#habFontSpan").hide("slow");   
+				$("#paletaCores").show("slow");   
+				$("#habEspess").show("slow"); 	  
+				$("#habOpcao").show("slow"); 	  
+				$("#habEspessSpan").show("slow"); 
 			});
 
 			$("#drop").click(function(){
@@ -664,7 +664,7 @@
 			});
 
 			$("#inputFile").click(function(){
-				$("#habOpcao").hide("slow");  <!-- Esconder -->
+				$("#habOpcao").hide("slow");  
 
 				document.getElementById("delete").className = "desabilitado";
 				del=false;
