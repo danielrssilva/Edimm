@@ -27,19 +27,36 @@ html, body{
 }
 .fixed-bar{
     float: right;
-    margin-right: 180px;
 }
 .navbar-nav{
     height: 55px;
 }
-.container{
-    margin: 0;
-    padding: 0;
-    padding-left: 10px;
-    margin-left: 100px;
-}
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border-color: #e7e7e700;
+}
+.buttonToolbar.a-color-picker{
+    margin-left: 0;
+    padding-bottom: 2.5px;
+}
+.color-picker{
+    margin-top: 4px;
+    padding: 0;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(135deg);
+    width: 17px;
+    height: 17px;
+}
+.color-picker::-webkit-color-swatch-wrapper {
+    border: none;
+    padding: 0;
+    border-radius: 50% 50% 50% 0;
+}
+.color-picker::-webkit-color-swatch {
+    border: none;
+    border-radius: 50% 50% 50% 0;
+}
+.color-picker:focus{
+    outline: none;
 }
 .buttonToolbar.li-label{
     cursor: default;

@@ -68,16 +68,49 @@
 			<div class="navbar-collapse collapse" aria-expanded="false">
 			<!-- Main navigation -->
 				<ul class="nav navbar-nav">
-					<li>
-						<fieldset class="scheduler-border" id ="habOpcao">
-						<legend class="scheduler-border"></legend>
-						<li class="buttonToolbar"><span id="selecionado"></span></li>
-						</fieldset>
-					</li>
+						<li>
+								<fieldset class="scheduler-border">
+								<legend class="scheduler-border"></legend>	
+								<li><a data-toggle="dropdown" title="Escolher Medida" id="habMedida" class="buttonToolbar"><span id="medida"></span><span class="caret"></span></a>
+									<ul class="dropdown-menu" id="text-size">
+										<!-- Gera o tamanho do texto no JS -->
+									</ul>
+								</li>
+								</fieldset>
+							</li>
+		
+							<li>
+								<fieldset class="scheduler-border">
+								<legend class="scheduler-border"></legend>
+								<li><a data-toggle="dropdown" title="Escolher Fonte" id="habFont" class="buttonToolbar"><span id="font"></span><span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="javascript:setFontText('arial');" id="arial">Arial</a></li>
+										<li><a href="javascript:setFontText('comicsans');" id="comicsans">Comic Sans</a></li>
+										<li><a href="javascript:setFontText('georgia');" id="georgia">Georgia</a></li>
+										<li><a href="javascript:setFontText('impact');" id="impact">Impact</a></li>
+										<li><a href="javascript:setFontText('lucida');" id="lucida">Lucida</a></li>
+										<li><a href="javascript:setFontText('lucidasans');" id="lucidasans">Lucidasans</a></li>
+										<li><a href="javascript:setFontText('monospace');" id="monospace">Monospace</a></li>
+										<li><a href="javascript:setFontText('opendyslexic');" id="opendyslexic">Opendys Lexic</a></li>
+										<li><a href="javascript:setFontText('palatino');" id="palatino">Palatino</a></li>
+										<li><a href="javascript:setFontText('sansserif');" id="sansserif">Sansserif</a></li>
+										<li><a href="javascript:setFontText('serif');" id="serif">Serif</a></li>
+										<li><a href="javascript:setFontText('symbol');" id="symbol">Symbol</a></li>
+										<li><a href="javascript:setFontText('tahoma');" id="tahoma">Tahoma</a></li>
+										<li><a href="javascript:setFontText('timesnewroman');" id="timesnewroman">Times New Roman</a></li>
+										<li><a href="javascript:setFontText('trebuchet');" id="trebuchet">Trebuchet</a></li>
+										<li><a href="javascript:setFontText('verdana');" id="verdana">Verdana</a></li>
+										<li><a href="javascript:setFontText('webdings');" id="webdings">Webdings</a></li>
+										<li><a href="javascript:setFontText('wingdings');" id="wingdings">Wingdings</a></li>
+									</ul>
+								</li>
+								</fieldset>	
+							</li>
 					<!-- Espessura -->
 					<li>
 							<li><a data-toggle="dropdown" title="Escolher Espessura" id="habEspess"><img src="images/svg/3lineweight.svg" width="25"><span class="caret"></span></a>
 								<ul class="dropdown-menu sizing" id="line-weight">
+									<!-- Gera a espessura da linha no JS -->
 								</ul>
 							</li>
 						</li>
@@ -99,80 +132,63 @@
 						</fieldset>
 					</li>
 
+					
 					<li>
-						<li><a data-toggle="dropdown" title="Escolher Medida" id="habMedida"><span id="medida"></span><span class="caret"></span></a>
-							<ul class="dropdown-menu" id="text-size">
-							</ul>
-						</li>
+						<fieldset class="scheduler-border">
+						<legend class="scheduler-border"></legend>
+						<li><a title="Paleta de Cores" class="buttonToolbar a-color-picker"><input type="color" onchange="setColor(this.value);" id="paletaCores" class="color-picker"></a>
+						</fieldset>
 					</li>
-
-					<li>
-						<li><a data-toggle="dropdown" title="Escolher Fonte" id="habFont"><span id="font"></span><span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="javascript:setFontText('arial');" id="arial">Arial</a></li>
-								<li><a href="javascript:setFontText('comicsans');" id="comicsans">Comic Sans</a></li>
-								<li><a href="javascript:setFontText('georgia');" id="georgia">Georgia</a></li>
-								<li><a href="javascript:setFontText('impact');" id="impact">Impact</a></li>
-								<li><a href="javascript:setFontText('lucida');" id="lucida">Lucida</a></li>
-								<li><a href="javascript:setFontText('lucidasans');" id="lucidasans">Lucidasans</a></li>
-								<li><a href="javascript:setFontText('monospace');" id="monospace">Monospace</a></li>
-								<li><a href="javascript:setFontText('opendyslexic');" id="opendyslexic">Opendys Lexic</a></li>
-								<li><a href="javascript:setFontText('palatino');" id="palatino">Palatino</a></li>
-								<li><a href="javascript:setFontText('sansserif');" id="sansserif">Sansserif</a></li>
-								<li><a href="javascript:setFontText('serif');" id="serif">Serif</a></li>
-								<li><a href="javascript:setFontText('symbol');" id="symbol">Symbol</a></li>
-								<li><a href="javascript:setFontText('tahoma');" id="tahoma">Tahoma</a></li>
-								<li><a href="javascript:setFontText('timesnewroman');" id="timesnewroman">Times New Roman</a></li>
-								<li><a href="javascript:setFontText('trebuchet');" id="trebuchet">Trebuchet</a></li>
-								<li><a href="javascript:setFontText('verdana');" id="verdana">Verdana</a></li>
-								<li><a href="javascript:setFontText('webdings');" id="webdings">Webdings</a></li>
-								<li><a href="javascript:setFontText('wingdings');" id="wingdings">Wingdings</a></li>
-							</ul>
-						</li>
-					</li>
-
-					<li><a title="Paleta de Cores"><input type="color" onchange="setColor(this.value);" id="paletaCores"></a>
+					
+					
+					
 				</ul>
 				<ul class="nav navbar-nav fixed-bar">
-					<li><a title="Mover Componente"id="move"><img src="images/svg/3move.svg" width="22"></a>
-					<li><a title="Excluir Componente" id="delete"><img src="images/3delete.png" width="22"></a>
-					<li><a data-toggle="dropdown" title="Opções" id="display"><img src="images/svg/5salvararquivo.svg" width="22"><span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="javascript:saveIt();" class="fontnormal"><img src="images/svg/link.svg" width="22">Salvar link</a>
-							<li><a href="javascript:imageIt();" class="fontnormal"><img src="images/svg/5image.svg" width="22"> Salvar em PNG </a>
-							<li><a href="javascript:pdfIt();" class="fontnormal"><img src="images/svg/5pdf.svg" width="22"> Salvar em PDF </a>
-						</ul>
-						<li><a data-toggle="dropdown" title="Configuração"><img src="images/svg/3conf.svg" width="22"><span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a tabindex="-1" href="javascript:window.location.href='index.html';" class="fontnormal"><img src="images/svg/4newfile.svg" width="22"> Novo Arquivo </a></li>
-								<li class="divider"></li>
-								<li class="dropdown-submenu">
-									<a tabindex="-1" href="#"  class="fontnormal"><img src="images/svg/3color.svg" width="22"> Cores </a>
+						<li>
+								<fieldset class="scheduler-border" id ="habOpcao">
+								<legend class="scheduler-border"></legend>
+								<li class="buttonToolbar"><span id="selecionado"></span></li>
+								</fieldset>
+							</li>
+							<li><a title="Mover Componente"id="move"><img src="images/svg/3move.svg" width="22"></a>
+								<li><a title="Excluir Componente" id="delete"><img src="images/3delete.png" width="22"></a>
+								<li><div class="testando"></div></li>
+								<li><a data-toggle="dropdown" title="Opções" id="display"><img src="images/svg/5salvararquivo.svg" width="22"><span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a tabindex="-1" class="fontnormal"><input type="checkbox" name="bordas" value="bordas" onchange="setColorElement();" checked> Cores de Linha </a></li>
-										<li><a tabindex="-1" class="fontnormal"><input type="checkbox" name="fundo" value="fundo" onchange="setColorElement();"> Cores de Fundo </a></li>
-										<li><a tabindex="-1" class="fontnormal"><input type="checkbox" name="tracejado" value="tracejado" onchange="verificaCheckTracejado();"> Linhas Tracejadas </a></li>
+										<li><a href="javascript:saveIt();" class="fontnormal"><img src="images/svg/link.svg" width="22">Salvar link</a>
+										<li><a href="javascript:imageIt();" class="fontnormal"><img src="images/svg/5image.svg" width="22"> Salvar em PNG </a>
+										<li><a href="javascript:pdfIt();" class="fontnormal"><img src="images/svg/5pdf.svg" width="22"> Salvar em PDF </a>
 									</ul>
+									<li><a data-toggle="dropdown" title="Configuração"><img src="images/svg/3conf.svg" width="22"><span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a tabindex="-1" href="javascript:window.location.href='index.html';" class="fontnormal"><img src="images/svg/4newfile.svg" width="22"> Novo Arquivo </a></li>
+											<li class="divider"></li>
+											<li class="dropdown-submenu">
+												<a tabindex="-1" href="#"  class="fontnormal"><img src="images/svg/3color.svg" width="22"> Cores </a>
+												<ul class="dropdown-menu">
+													<li><a tabindex="-1" class="fontnormal"><input type="checkbox" name="bordas" value="bordas" onchange="setColorElement();" checked> Cores de Linha </a></li>
+													<li><a tabindex="-1" class="fontnormal"><input type="checkbox" name="fundo" value="fundo" onchange="setColorElement();"> Cores de Fundo </a></li>
+													<li><a tabindex="-1" class="fontnormal"><input type="checkbox" name="tracejado" value="tracejado" onchange="verificaCheckTracejado();"> Linhas Tracejadas </a></li>
+												</ul>
+											</li>
+											<li class="divider"></li>
+											<li class="dropdown-submenu">
+												<a tabindex="-1" href="#"  class="fontnormal"><img src="images/svg/3layout.svg" width="22"> Grade </a>
+												<ul class="dropdown-menu">
+													<li><a tabindex="-1" href="javascript:drawGrid();" class="fontnormal"><img src="images/svg/4drawgrid.svg" width="22"> Linha Vertical </a></li>
+													<li><a tabindex="-1" href="javascript:drawLine();" class="fontnormal"><img src="images/svg/4drawline.svg" width="22"> Linha Horizontal </a></li>
+													<li><a tabindex="-1" href="javascript:drawGridLine();" class="fontnormal"><img src="images/svg/4drawgridline.svg" width="22"> Gerar Grade </a></li>
+													<li><a tabindex="-1" href="javascript:drawLimetrada();" class="fontnormal"><img src="images/svg/4drawlimetrada.svg" width="22"> Grade Milimetrada </a></li>
+													<li><a tabindex="-1" href="javascript:clearLayout();" class="fontnormal"><img src="images/svg/4cleargrid.svg" width="22"> Limpar Layout </a></li>
+												</ul>
+											</li>
+											<li class="divider"></li>
+											<li><a tabindex="-1" href="#" id="menu-toggle" class="fontnormal"><img src="images/svg/3team.svg" width="22"> Sobre </a></li>
+			
+										</ul>
+									</li>
 								</li>
-								<li class="divider"></li>
-								<li class="dropdown-submenu">
-									<a tabindex="-1" href="#"  class="fontnormal"><img src="images/svg/3layout.svg" width="22"> Grade </a>
-									<ul class="dropdown-menu">
-										<li><a tabindex="-1" href="javascript:drawGrid();" class="fontnormal"><img src="images/svg/4drawgrid.svg" width="22"> Linha Vertical </a></li>
-										<li><a tabindex="-1" href="javascript:drawLine();" class="fontnormal"><img src="images/svg/4drawline.svg" width="22"> Linha Horizontal </a></li>
-										<li><a tabindex="-1" href="javascript:drawGridLine();" class="fontnormal"><img src="images/svg/4drawgridline.svg" width="22"> Gerar Grade </a></li>
-										<li><a tabindex="-1" href="javascript:drawLimetrada();" class="fontnormal"><img src="images/svg/4drawlimetrada.svg" width="22"> Grade Milimetrada </a></li>
-										<li><a tabindex="-1" href="javascript:clearLayout();" class="fontnormal"><img src="images/svg/4cleargrid.svg" width="22"> Limpar Layout </a></li>
-									</ul>
-								</li>
-								<li class="divider"></li>
-								<li><a tabindex="-1" href="#" id="menu-toggle" class="fontnormal"><img src="images/svg/3team.svg" width="22"> Sobre </a></li>
-
-							</ul>
-						</li>
-					</li>
-
-					<li><a title="Touchscreen" id="touch"><img src="images/svg/3touchscreen.svg" width="22"></a></li>
+								<li><a title="Touchscreen" id="touch"><img src="images/svg/3touchscreen.svg" width="22"></a></li>
 				</ul>
 			</div>
 		</div>
