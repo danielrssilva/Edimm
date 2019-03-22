@@ -40,18 +40,20 @@
 				liA.setAttribute("title", ""+i+"px");
 				if(i<10){
 					liA.setAttribute("id", "line0"+i);
-					liDiv.setAttribute("class", "line line0"+i);
+					liDiv.setAttribute("class", "line");
+					liDiv.style.height = i+"px";
 				}
 				else{
 					liA.setAttribute("id", "line"+i)
-					liDiv.setAttribute("class", "line line"+i);
+					liDiv.setAttribute("class", "line");
+					liDiv.style.height = i+"px";
 				}
 				liA.appendChild(liDiv);
 				li.appendChild(liA); 
 				lineWeightDropdown.appendChild(li);
 			}
 		})();
-		//<li><a href="javascript:setSizeText(10);" id="tamanho10">10</a></li>
+		// Adicionar tamanho da fonte
 		(function(){
 			var textSize = document.getElementById("text-size");
 			for(i=10;i<=48;){
@@ -59,6 +61,7 @@
 				var liA = document.createElement("a");
 				liA.setAttribute("href", "javascript:setSizeText("+i+");");
 				liA.setAttribute("id", "tamanho"+i);
+				liA.setAttribute("class", "tamanho");
 				liA.append(i);
 				li.appendChild(liA); 
 				textSize.appendChild(li);
@@ -172,160 +175,6 @@
 			$("#wingdings").click(function(){
 				$("#habFontSpan").show("slow"); 
 				$("#font").html("Wingdings");
-			});
-
-	//======================================================================================
-
-			$("#tamanho10").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("10");
-			});
-
-			$("#tamanho12").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("12");
-			});
-
-			$("#tamanho14").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("14");
-			});
-
-			$("#tamanho16").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("16");
-			});
-
-			$("#tamanho18").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("18");
-			});
-
-			$("#tamanho20").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("20");
-			});
-
-			$("#tamanho22").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("22");
-			});
-
-			$("#tamanho24").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("24");
-			});
-
-			$("#tamanho26").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("26");
-			});
-
-			$("#tamanho28").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("28");
-			});
-
-			$("#tamanho30").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("30");
-			});
-
-			$("#tamanho32").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("32");
-			});
-
-			$("#tamanho34").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("34");
-			});
-
-			$("#tamanho36").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("36");
-			});
-
-			$("#tamanho38").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("38");
-			});
-
-			$("#tamanho40").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("40");
-			});
-
-			$("#tamanho42").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("42");
-			});
-
-			$("#tamanho44").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("44");
-			});
-
-			$("#tamanho46").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("46");
-			});
-
-			$("#tamanho48").click(function(){
-				$("#habMedidaSpan").show("slow"); 
-				$("#medida").html("48");
-			});
-
-	//======================================================================================
-
-			$("#line01").click(function(){
-				$("#habEspessSpan").show("slow"); 
-				$("#linha").html("<div class='line line01'></div>");
-			});
-
-			$("#line02").click(function(){
-				$("#habEspessSpan").show("slow"); 
-				$("#linha").html("<div class='line line02'></div>");
-			});
-
-			$("#line03").click(function(){
-				$("#habEspessSpan").show("slow"); 
-				$("#linha").html("<div class='line line03'></div>");
-			});
-
-			$("#line04").click(function(){
-				$("#habEspessSpan").show("slow"); 
-				$("#linha").html("<div class='line line04'></div>");
-			});
-
-			$("#line05").click(function(){
-				$("#habEspessSpan").show("slow"); 
-				$("#linha").html("<div class='line line05'></div>");
-			});
-
-			$("#line06").click(function(){
-				$("#habEspessSpan").show("slow"); 
-				$("#linha").html("<div class='line line06'></div>");
-			});
-
-			$("#line07").click(function(){
-				$("#habEspessSpan").show("slow"); 
-				$("#linha").html("<div class='line line07'></div>");
-			});
-
-			$("#line08").click(function(){
-				$("#habEspessSpan").show("slow"); 
-				$("#linha").html("<div class='line line08'></div>");
-			});
-
-			$("#line09").click(function(){
-				$("#habEspessSpan").show("slow"); 
-				$("#linha").html("<div class='line line09'></div>");
-			});
-
-			$("#line10").click(function(){
-				$("#habEspessSpan").show("slow"); 
-				$("#linha").html("<div class='line line10'></div>");
 			});
 
 	//======================================================================================

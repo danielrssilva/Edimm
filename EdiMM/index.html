@@ -145,50 +145,73 @@
 				</ul>
 				<ul class="nav navbar-nav fixed-bar">
 						<li>
-								<fieldset class="scheduler-border" id ="habOpcao">
-								<legend class="scheduler-border"></legend>
-								<li class="buttonToolbar"><span id="selecionado"></span></li>
-								</fieldset>
+							<fieldset class="scheduler-border" id ="habOpcao">
+							<legend class="scheduler-border"></legend>
+							<li class="buttonToolbar"><span id="selecionado"></span></li>
+							</fieldset>
+						</li>
+							
+						<li>
+							<fieldset class="scheduler-border" id ="habEspessSpan">
+							<legend class="scheduler-border"></legend>
+							<a title="Mover Componente" id="move" class="buttonToolbar"><img src="images/svg/3move.svg" width="22"></a>
+							</fieldset>
+						</li>
+						<li>
+							<fieldset class="scheduler-border" id ="habOpcao">
+							<legend class="scheduler-border"></legend>
+							<a title="Excluir Componente" id="delete"><img src="images/3delete.png" width="22"></a>
+							</fieldset>
+						</li>
+						<li>
+							<fieldset class="scheduler-border" id ="habOpcao">
+							<legend class="scheduler-border"></legend>
+							<a data-toggle="dropdown" title="Opções" id="display" class="buttonToolbar"><img src="images/svg/5salvararquivo.svg" width="22"><span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="javascript:saveIt();" class="fontnormal"><img src="images/svg/link.svg" width="22">Salvar link</a>
+							<li><a href="javascript:imageIt();" class="fontnormal"><img src="images/svg/5image.svg" width="22"> Salvar em PNG </a>
+							<li><a href="javascript:pdfIt();" class="fontnormal"><img src="images/svg/5pdf.svg" width="22"> Salvar em PDF </a>
+						</ul>
+						</fieldset>
+						<li>
+							<fieldset class="scheduler-border" id ="habOpcao">
+							<legend class="scheduler-border"></legend>
+							<a data-toggle="dropdown" title="Configuração" class="buttonToolbar"><img src="images/svg/3conf.svg" width="22"><span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a tabindex="-1" href="javascript:window.location.href='index.html';" class="fontnormal"><img src="images/svg/4newfile.svg" width="22"> Novo Arquivo </a></li>
+							<li class="divider"></li>
+							<li class="dropdown-submenu">
+							<a tabindex="-1" href="#"  class="fontnormal"><img src="images/svg/3color.svg" width="22"> Cores </a>
+							<ul class="dropdown-menu">
+								<li><a tabindex="-1" class="fontnormal"><input type="checkbox" name="bordas" value="bordas" onchange="setColorElement();" checked> Cores de Linha </a></li>
+								<li><a tabindex="-1" class="fontnormal"><input type="checkbox" name="fundo" value="fundo" onchange="setColorElement();"> Cores de Fundo </a></li>
+								<li><a tabindex="-1" class="fontnormal"><input type="checkbox" name="tracejado" value="tracejado" onchange="verificaCheckTracejado();"> Linhas Tracejadas </a></li>
+							</ul>
+							<li class="divider"></li>
+							<li class="dropdown-submenu">
+								<a tabindex="-1" href="#"  class="fontnormal"><img src="images/svg/3layout.svg" width="22"> Grade </a>
+								<ul class="dropdown-menu">
+									<li><a tabindex="-1" href="javascript:drawGrid();" class="fontnormal"><img src="images/svg/4drawgrid.svg" width="22"> Linha Vertical </a></li>
+									<li><a tabindex="-1" href="javascript:drawLine();" class="fontnormal"><img src="images/svg/4drawline.svg" width="22"> Linha Horizontal </a></li>
+									<li><a tabindex="-1" href="javascript:drawGridLine();" class="fontnormal"><img src="images/svg/4drawgridline.svg" width="22"> Gerar Grade </a></li>
+									<li><a tabindex="-1" href="javascript:drawLimetrada();" class="fontnormal"><img src="images/svg/4drawlimetrada.svg" width="22"> Grade Milimetrada </a></li>
+									<li><a tabindex="-1" href="javascript:clearLayout();" class="fontnormal"><img src="images/svg/4cleargrid.svg" width="22"> Limpar Layout </a></li>
+								</ul>
 							</li>
-							<li><a title="Mover Componente"id="move"><img src="images/svg/3move.svg" width="22"></a>
-								<li><a title="Excluir Componente" id="delete"><img src="images/3delete.png" width="22"></a>
-								<li><div class="testando"></div></li>
-								<li><a data-toggle="dropdown" title="Opções" id="display"><img src="images/svg/5salvararquivo.svg" width="22"><span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="javascript:saveIt();" class="fontnormal"><img src="images/svg/link.svg" width="22">Salvar link</a>
-										<li><a href="javascript:imageIt();" class="fontnormal"><img src="images/svg/5image.svg" width="22"> Salvar em PNG </a>
-										<li><a href="javascript:pdfIt();" class="fontnormal"><img src="images/svg/5pdf.svg" width="22"> Salvar em PDF </a>
-									</ul>
-									<li><a data-toggle="dropdown" title="Configuração"><img src="images/svg/3conf.svg" width="22"><span class="caret"></span></a>
-										<ul class="dropdown-menu">
-											<li><a tabindex="-1" href="javascript:window.location.href='index.html';" class="fontnormal"><img src="images/svg/4newfile.svg" width="22"> Novo Arquivo </a></li>
-											<li class="divider"></li>
-											<li class="dropdown-submenu">
-												<a tabindex="-1" href="#"  class="fontnormal"><img src="images/svg/3color.svg" width="22"> Cores </a>
-												<ul class="dropdown-menu">
-													<li><a tabindex="-1" class="fontnormal"><input type="checkbox" name="bordas" value="bordas" onchange="setColorElement();" checked> Cores de Linha </a></li>
-													<li><a tabindex="-1" class="fontnormal"><input type="checkbox" name="fundo" value="fundo" onchange="setColorElement();"> Cores de Fundo </a></li>
-													<li><a tabindex="-1" class="fontnormal"><input type="checkbox" name="tracejado" value="tracejado" onchange="verificaCheckTracejado();"> Linhas Tracejadas </a></li>
-												</ul>
-											</li>
-											<li class="divider"></li>
-											<li class="dropdown-submenu">
-												<a tabindex="-1" href="#"  class="fontnormal"><img src="images/svg/3layout.svg" width="22"> Grade </a>
-												<ul class="dropdown-menu">
-													<li><a tabindex="-1" href="javascript:drawGrid();" class="fontnormal"><img src="images/svg/4drawgrid.svg" width="22"> Linha Vertical </a></li>
-													<li><a tabindex="-1" href="javascript:drawLine();" class="fontnormal"><img src="images/svg/4drawline.svg" width="22"> Linha Horizontal </a></li>
-													<li><a tabindex="-1" href="javascript:drawGridLine();" class="fontnormal"><img src="images/svg/4drawgridline.svg" width="22"> Gerar Grade </a></li>
-													<li><a tabindex="-1" href="javascript:drawLimetrada();" class="fontnormal"><img src="images/svg/4drawlimetrada.svg" width="22"> Grade Milimetrada </a></li>
-													<li><a tabindex="-1" href="javascript:clearLayout();" class="fontnormal"><img src="images/svg/4cleargrid.svg" width="22"> Limpar Layout </a></li>
-												</ul>
-											</li>
-											<li class="divider"></li>
-											<li><a tabindex="-1" href="#" id="menu-toggle" class="fontnormal"><img src="images/svg/3team.svg" width="22"> Sobre </a></li>
-			
-										</ul>
-									</li>
-								</li>
-								<li><a title="Touchscreen" id="touch"><img src="images/svg/3touchscreen.svg" width="22"></a></li>
+							<li class="divider"></li>
+							<li>
+								<a tabindex="-1" href="#" id="menu-toggle" class="fontnormal" class="buttonToolbar"><img src="images/svg/3team.svg" width="22"> Sobre </a></li>
+							</li>
+						</ul>
+						</fieldset>
+						</li>
+					</li>
+					<li>
+						<fieldset class="scheduler-border" id ="habOpcao">
+						<legend class="scheduler-border"></legend>
+						<a title="Touchscreen" id="touch" class="buttonToolbar"><img src="images/svg/3touchscreen.svg" width="22"></a></li>
+						</fieldset>
+					</li>
 				</ul>
 			</div>
 		</div>

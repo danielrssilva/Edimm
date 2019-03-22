@@ -115,36 +115,7 @@ div#nav li a:hover{
     width: 24px;
     margin: 8px 0;
     border-radius: 2px;
-}
-.line01{
-    height: 1px;
-}
-.line02{
-    height: 2px;
-}
-.line03{
-    height: 3px;
-}
-.line04{
-    height: 4px;
-}
-.line05{
-    height: 5px;
-}
-.line06{
-    height: 6px;
-}
-.line07{
-    height: 7px;
-}
-.line08{
-    height: 8px;
-}
-.line09{
-    height: 9px;
-}
-.line10{
-    height: 10px;
+    min-height: 1px;
 }
 .desabilitado{
 	

@@ -789,6 +789,7 @@
 		//============================================================================
 
 		function moveIt() { // Function responsible for moving elements
+			//move
 			removeEventListenerFromSVG(numberOfEventListener);
 			numberOfEventListener = 2; // Pass number 2 in function parameter
 
@@ -1327,7 +1328,8 @@
 		function createWrite() { // Function responsible for creating typed script
 			removeEventListenerFromSVG(numberOfEventListener);
 			numberOfEventListener = 4; // Pass number 4 in function parameter
-
+			// canvas = document.getElementById("svgDiv");
+			// canvas.style.cursor = "text";
 			if (stylusIsEnabled) {
 				// The pointer will be used
 				// alert ("Using pointer");
@@ -1351,7 +1353,7 @@
 		// Start Touch Event
 		function startMultiTouchWrite(event) {
 			var touches = event.changedTouches; // Get touchEvent
-
+			
 			for(var j = 0; j < touches.length; j++) {
 				/* Store touch info on touchstart */
 				touchesInAction[ "$" + touches[j].identifier ] = { /* Access stored touch info on touchend */
@@ -1376,7 +1378,6 @@
 				}
 				// If activateExistingText equal to false enters condition
 				if(activateExistingText == false) {
-
 					createViewElementForPath(); // Call function createViewElementForPath
 
 					var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
@@ -2241,6 +2242,7 @@
 		//============================================================================
 
 		function readURL(event) { // Function responsible for creating the image element
+			//nwse-resize
 			var reader = new FileReader();
 			removeEventListenerFromSVG(numberOfEventListener);
 			numberOfEventListener = 10; // Pass number 10 in function parameter
@@ -3237,6 +3239,7 @@
 
 		function setSizeText(val) { // Function responsible for initializing element size
 			sizeLetter = val; // Get size
+			document.getElementById("medida").innerHTML = val;
 		}
 
 		//============================================================================
@@ -3249,6 +3252,8 @@
 
 		function setWidth(val) { // Function responsible for initializing element width
 			widthBoot = val; // Get width
+			linhaSpan = document.getElementById("linha");
+			linhaSpan.innerHTML = "<div class='line' style='height: "+val+"px;'></div>";
 		}
 
 		//============================================================================
