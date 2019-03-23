@@ -29,6 +29,40 @@
 		var sublinhado=false;
 		var italico=false;
 
+		var fonts = [
+			"Arial",
+			"Comic Sans",
+			"Georgia",
+			"Impact",
+			"Lucida",
+			"Lucidasans",
+			"Monospace",
+			"Opendys Lexic",
+			"Palatino",
+			"Sansserif",
+			"Serif",
+			"Symbol",
+			"Tahoma",
+			"Times New Roman",
+			"Trebuchet",
+			"Verdana",
+			"Webdings",
+			"Wingdings",
+		];
+
+		(function(){
+			var ulFonts = document.getElementById("font-family");
+			fonts.forEach(font => {
+				var id = font.replace(/[\s]/g,"").toLocaleLowerCase();
+				var li = document.createElement("li");
+				var liA = document.createElement("a");
+				liA.setAttribute("href", "javascript:setFontText('"+id+"','"+font+"');");
+				liA.setAttribute("id", id);
+				liA.append(font);
+				li.appendChild(liA);
+				ulFonts.appendChild(li);
+			});
+		})();
 		// Adicionar espessura da linha
 		(function(){
 			var lineWeightDropdown = document.getElementById("line-weight");
@@ -68,6 +102,7 @@
 				i += 2;
 			}
 		})();
+
 		$( document ).ready(function(){
 
 			$("#habFont").hide("slow");   	  
@@ -86,96 +121,6 @@
 			$("#font").html("Arial");
 
 			document.getElementById("draw").className = "btn btn-default";
-
-			$("#arial").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Arial");
-			});
-
-			$("#comicsans").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Comic Sans");
-			});
-
-			$("#georgia").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Georgia");
-			});
-
-			$("#impact").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Impact");
-			});
-
-			$("#lucida").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Lucida");
-			});
-
-			$("#lucidasans").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Lucidasans");
-			});
-
-			$("#monospace").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Monospace");
-			});
-
-			$("#opendyslexic").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Opendys Lexic");
-			});
-
-			$("#palatino").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Palatino");
-			});
-
-			$("#sansserif").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Sansserif");
-			});
-
-			$("#serif").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Serif");
-			});
-
-			$("#symbol").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Symbol");
-			});
-
-			$("#tahoma").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Tahoma");
-			});
-
-			$("#timesnewroman").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Times New Roman");
-			});
-
-			$("#trebuchet").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Trebuchet");
-			});
-
-			$("#verdana").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Verdana");
-			});
-
-			$("#webdings").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Webdings");
-			});
-
-			$("#wingdings").click(function(){
-				$("#habFontSpan").show("slow"); 
-				$("#font").html("Wingdings");
-			});
 
 	//======================================================================================
 

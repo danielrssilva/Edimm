@@ -3244,16 +3244,16 @@
 
 		//============================================================================
 
-		function setFontText(val) { // Function responsible for initializing element font
+		function setFontText(val,font) { // Function responsible for initializing element font
 			fontLetter = val; // Get font
+			document.getElementById("font").innerHTML = font;
 		}
 
 		//============================================================================
 
 		function setWidth(val) { // Function responsible for initializing element width
 			widthBoot = val; // Get width
-			linhaSpan = document.getElementById("linha");
-			linhaSpan.innerHTML = "<div class='line' style='height: "+val+"px;'></div>";
+			document.getElementById("linha").innerHTML = "<div class='line' style='height: "+val+"px;'></div>";
 		}
 
 		//============================================================================
