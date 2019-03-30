@@ -28,37 +28,84 @@
 		var negrito=false;
 		var sublinhado=false;
 		var italico=false;
-
-		var fonts = [
-			"Arial",
-			"Comic Sans",
-			"Georgia",
-			"Impact",
-			"Lucida",
-			"Lucidasans",
-			"Monospace",
-			"Opendys Lexic",
-			"Palatino",
-			"Sansserif",
-			"Serif",
-			"Symbol",
-			"Tahoma",
-			"Times New Roman",
-			"Trebuchet",
-			"Verdana",
-			"Webdings",
-			"Wingdings",
+		var testand = [
+			{
+				name: "Arial",
+				id: "arial"
+			},
+			{
+				name: "Comic Sans",
+				id: "comicsans"
+			},
+			{
+				name: "Georgia",
+				id: "georgia"
+			},
+			{
+				name: "Impact",
+				id: "impact"
+			},
+			{
+				name: "Lucidasans",
+				id: "lucidasans"
+			},
+			{
+				name: "Monospace",
+				id: "monospace"
+			},
+			{
+				name: "Opendys Lexic",
+				id: "opendyslexic"
+			},
+			{
+				name: "Palatino",
+				id: "palatino"
+			},
+			{
+				name: "Sansserif",
+				id: "sansserif"
+			},
+			{
+				name: "Serif",
+				id: "serif"
+			},
+			{
+				name: "Symbol",
+				id: "symbol"
+			},
+			{
+				name: "Tahoma",
+				id: "tahoma"
+			},
+			{
+				name: "Times New Roman",
+				id: "timesnewroman"
+			},
+			{
+				name: "Trebuchet",
+				id: "trebuchet"
+			},
+			{
+				name: "Verdana",
+				id: "verdana"
+			},
+			{
+				name: "Webdings",
+				id: "webdings"
+			},
+			{
+				name: "Wingdings",
+				id: "wingdings"
+			}
 		];
-
 		(function(){
 			var ulFonts = document.getElementById("font-family");
-			fonts.forEach(font => {
-				var id = font.replace(/[\s]/g,"").toLocaleLowerCase();
+			testand.forEach(font => {
 				var li = document.createElement("li");
 				var liA = document.createElement("a");
-				liA.setAttribute("href", "javascript:setFontText('"+id+"','"+font+"');");
-				liA.setAttribute("id", id);
-				liA.append(font);
+				liA.setAttribute("href", "javascript:setFontText('"+font.id+"','"+font.name+"');");
+				liA.setAttribute("id", font.id);
+				liA.append(font.name);
 				li.appendChild(liA);
 				ulFonts.appendChild(li);
 			});
@@ -85,6 +132,9 @@
 				liA.appendChild(liDiv);
 				li.appendChild(liA); 
 				lineWeightDropdown.appendChild(li);
+				if(i===3){
+					linha = liDiv;
+				}
 			}
 		})();
 		// Adicionar tamanho da fonte
@@ -112,7 +162,6 @@
 			$("#habMedidaSpan").hide("slow"); 
 			$("#habFontSpan").hide("slow");   
 
-			var linha = document.getElementById("line03");
 
 			$("#linha").html(linha);
 
@@ -161,18 +210,18 @@
 
 			$("#move").click(function(){
 
-				document.getElementById("circle").className = "desabilitado";
-				document.getElementById("drop").className = "desabilitado";
-				document.getElementById("square").className = "desabilitado";
-				document.getElementById("ellipse").className = "desabilitado";
-				document.getElementById("line").className = "desabilitado";
+				document.getElementById("circle").className = "buttonToolbar";
+				document.getElementById("drop").className = "buttonToolbar";
+				document.getElementById("square").className = "buttonToolbar";
+				document.getElementById("ellipse").className = "buttonToolbar";
+				document.getElementById("line").className = "buttonToolbar";
 
 				if(move==false){
 					document.getElementById("move").className = "btn btn-default";
 					document.getElementById("move").href = "javascript:moveIt();";
 					move=true;
 				}else{
-					document.getElementById("move").className = "desabilitado";
+					document.getElementById("move").className = "buttonToolbar";
 					document.getElementById("move").href = "javascript:desabilitado();";
 					move=false;
 				}
@@ -187,7 +236,7 @@
 				$("#habFontSpan").hide("slow");    
 				$("#habEspess").hide("slow");      
 
-				document.getElementById("delete").className = "desabilitado";
+				document.getElementById("delete").className = "buttonToolbar";
 				del=false;
 				document.getElementById("keyboard").className = "buttonToolbar";
 				key=false;
@@ -197,18 +246,18 @@
 
 			$("#delete").click(function(){
 
-				document.getElementById("circle").className = "desabilitado";
-				document.getElementById("drop").className = "desabilitado";
-				document.getElementById("square").className = "desabilitado";
-				document.getElementById("ellipse").className = "desabilitado";
-				document.getElementById("line").className = "desabilitado";
+				document.getElementById("circle").className = "buttonToolbar";
+				document.getElementById("drop").className = "buttonToolbar";
+				document.getElementById("square").className = "buttonToolbar";
+				document.getElementById("ellipse").className = "buttonToolbar";
+				document.getElementById("line").className = "buttonToolbar";
 
 				if(del==false){
 					document.getElementById("delete").className = "btn btn-default";
 					document.getElementById("delete").href = "javascript:deleteIt();";
 					del=true;
 				}else{
-					document.getElementById("delete").className = "desabilitado";
+					document.getElementById("delete").className = "buttonToolbar";
 					document.getElementById("delete").href = "javascript:desabilitado();";
 					del=false;
 				}
@@ -223,7 +272,7 @@
 				$("#habFontSpan").hide("slow");    
 				$("#habEspess").hide("slow");      
 
-				document.getElementById("move").className = "desabilitado";
+				document.getElementById("move").className = "buttonToolbar";
 				move=false;
 				document.getElementById("keyboard").className = "buttonToolbar";
 				key=false;
@@ -242,7 +291,7 @@
 					document.getElementById("touch").href = "javascript:device();";
 					touch=true;
 				}else{
-					document.getElementById("touch").className = "desabilitado";
+					document.getElementById("touch").className = "buttonToolbar";
 					touch=false;
 				}
 			});
@@ -261,11 +310,11 @@
 				$("#habEspess").hide("slow"); 	   
 				$("#habOpcao").hide("slow");  	   
 
-				document.getElementById("circle").className = "desabilitado";
-				document.getElementById("drop").className = "desabilitado";
-				document.getElementById("square").className = "desabilitado";
-				document.getElementById("ellipse").className = "desabilitado";
-				document.getElementById("line").className = "desabilitado";
+				document.getElementById("circle").className = "buttonToolbar";
+				document.getElementById("drop").className = "buttonToolbar";
+				document.getElementById("square").className = "buttonToolbar";
+				document.getElementById("ellipse").className = "buttonToolbar";
+				document.getElementById("line").className = "buttonToolbar";
 
 				if(key==false){
 					document.getElementById("keyboard").className = "btn btn-default";
@@ -281,9 +330,9 @@
 				keybox=false;
 				document.getElementById("draw").className = "buttonToolbar";
 				draw=false;
-				document.getElementById("move").className = "desabilitado";
+				document.getElementById("move").className = "buttonToolbar";
 				move=false;
-				document.getElementById("delete").className = "desabilitado";
+				document.getElementById("delete").className = "buttonToolbar";
 				del=false;
 			});
 
@@ -299,19 +348,19 @@
 				$("#habEspess").hide("slow"); 	   
 				$("#habOpcao").hide("slow");  	   
 
-				document.getElementById("circle").className = "desabilitado";
-				document.getElementById("drop").className = "desabilitado";
-				document.getElementById("square").className = "desabilitado";
-				document.getElementById("ellipse").className = "desabilitado";
-				document.getElementById("line").className = "desabilitado";
+				document.getElementById("circle").className = "buttonToolbar";
+				document.getElementById("drop").className = "buttonToolbar";
+				document.getElementById("square").className = "buttonToolbar";
+				document.getElementById("ellipse").className = "buttonToolbar";
+				document.getElementById("line").className = "buttonToolbar";
 
 				document.getElementById("keyboard").className = "buttonToolbar";
 				key=false;
 				document.getElementById("draw").className = "buttonToolbar";
 				draw=false;
-				document.getElementById("move").className = "desabilitado";
+				document.getElementById("move").className = "buttonToolbar";
 				move=false;
-				document.getElementById("delete").className = "desabilitado";
+				document.getElementById("delete").className = "buttonToolbar";
 				del=false;
 
 				document.getElementById("keybox").href = "javascript:createBoxText();";
@@ -329,11 +378,11 @@
 				$("#habEspessSpan").show("slow");  
 				$("#habEspess").show("slow"); 	   
 
-				document.getElementById("circle").className = "desabilitado";
-				document.getElementById("drop").className = "desabilitado";
-				document.getElementById("square").className = "desabilitado";
-				document.getElementById("ellipse").className = "desabilitado";
-				document.getElementById("line").className = "desabilitado";
+				document.getElementById("circle").className = "buttonToolbar";
+				document.getElementById("drop").className = "buttonToolbar";
+				document.getElementById("square").className = "buttonToolbar";
+				document.getElementById("ellipse").className = "buttonToolbar";
+				document.getElementById("line").className = "buttonToolbar";
 
 				if(draw==false){
 					document.getElementById("draw").className = "btn btn-default";
@@ -349,9 +398,9 @@
 				key=false;
 				document.getElementById("keybox").className = "buttonToolbar";
 				keybox=false;
-				document.getElementById("move").className = "desabilitado";
+				document.getElementById("move").className = "buttonToolbar";
 				move=false;
-				document.getElementById("delete").className = "desabilitado";
+				document.getElementById("delete").className = "buttonToolbar";
 				del=false;
 
 			});
@@ -372,16 +421,16 @@
 				var img = $(this).find("img").clone();
 				$("#selecionado").html(img);
 
-				document.getElementById("circle").className = "desabilitado";
-				document.getElementById("square").className = "desabilitado";
-				document.getElementById("ellipse").className = "desabilitado";
-				document.getElementById("line").className = "desabilitado";
+				document.getElementById("circle").className = "buttonToolbar";
+				document.getElementById("square").className = "buttonToolbar";
+				document.getElementById("ellipse").className = "buttonToolbar";
+				document.getElementById("line").className = "buttonToolbar";
 
 				document.getElementById("drop").href = "javascript:createPonto();";
 
-				document.getElementById("delete").className = "desabilitado";
+				document.getElementById("delete").className = "buttonToolbar";
 				del=false;
-				document.getElementById("move").className = "desabilitado";
+				document.getElementById("move").className = "buttonToolbar";
 				move=false;
 				document.getElementById("keyboard").className = "buttonToolbar";
 				key=false;
@@ -395,16 +444,16 @@
 				var img = $(this).find("img").clone();
 				$("#selecionado").html(img);
 
-				document.getElementById("drop").className = "desabilitado";
-				document.getElementById("square").className = "desabilitado";
-				document.getElementById("ellipse").className = "desabilitado";
-				document.getElementById("line").className = "desabilitado";
+				document.getElementById("drop").className = "buttonToolbar";
+				document.getElementById("square").className = "buttonToolbar";
+				document.getElementById("ellipse").className = "buttonToolbar";
+				document.getElementById("line").className = "buttonToolbar";
 
 				document.getElementById("circle").href = "javascript:createCircle();";
 
-				document.getElementById("delete").className = "desabilitado";
+				document.getElementById("delete").className = "buttonToolbar";
 				del=false;
-				document.getElementById("move").className = "desabilitado";
+				document.getElementById("move").className = "buttonToolbar";
 				move=false;
 				document.getElementById("keyboard").className = "buttonToolbar";
 				key=false;
@@ -418,16 +467,16 @@
 				var img = $(this).find("img").clone();
 				$("#selecionado").html(img);
 
-				document.getElementById("circle").className = "desabilitado";
-				document.getElementById("drop").className = "desabilitado";
-				document.getElementById("ellipse").className = "desabilitado";
-				document.getElementById("line").className = "desabilitado";
+				document.getElementById("circle").className = "buttonToolbar";
+				document.getElementById("drop").className = "buttonToolbar";
+				document.getElementById("ellipse").className = "buttonToolbar";
+				document.getElementById("line").className = "buttonToolbar";
 
 				document.getElementById("square").href = "javascript:createRectangle();";
 
-				document.getElementById("delete").className = "desabilitado";
+				document.getElementById("delete").className = "buttonToolbar";
 				del=false;
-				document.getElementById("move").className = "desabilitado";
+				document.getElementById("move").className = "buttonToolbar";
 				move=false;
 				document.getElementById("keyboard").className = "buttonToolbar";
 				key=false;
@@ -441,16 +490,16 @@
 				var img = $(this).find("img").clone();
 				$("#selecionado").html(img);
 
-				document.getElementById("circle").className = "desabilitado";
-				document.getElementById("drop").className = "desabilitado";
-				document.getElementById("square").className = "desabilitado";
-				document.getElementById("line").className = "desabilitado";
+				document.getElementById("circle").className = "buttonToolbar";
+				document.getElementById("drop").className = "buttonToolbar";
+				document.getElementById("square").className = "buttonToolbar";
+				document.getElementById("line").className = "buttonToolbar";
 
 				document.getElementById("ellipse").href = "javascript:createEllipse();";
 
-				document.getElementById("delete").className = "desabilitado";
+				document.getElementById("delete").className = "buttonToolbar";
 				del=false;
-				document.getElementById("move").className = "desabilitado";
+				document.getElementById("move").className = "buttonToolbar";
 				move=false;
 				document.getElementById("keyboard").className = "buttonToolbar";
 				key=false;
@@ -464,16 +513,16 @@
 				var img = $(this).find("img").clone();
 				$("#selecionado").html(img);
 
-				document.getElementById("circle").className = "desabilitado";
-				document.getElementById("drop").className = "desabilitado";
-				document.getElementById("square").className = "desabilitado";
-				document.getElementById("ellipse").className = "desabilitado";
+				document.getElementById("circle").className = "buttonToolbar";
+				document.getElementById("drop").className = "buttonToolbar";
+				document.getElementById("square").className = "buttonToolbar";
+				document.getElementById("ellipse").className = "buttonToolbar";
 
 				document.getElementById("line").href = "javascript:createLine();";
 
-				document.getElementById("delete").className = "desabilitado";
+				document.getElementById("delete").className = "buttonToolbar";
 				del=false;
-				document.getElementById("move").className = "desabilitado";
+				document.getElementById("move").className = "buttonToolbar";
 				move=false;
 				document.getElementById("keyboard").className = "buttonToolbar";
 				key=false;
@@ -486,9 +535,9 @@
 			$("#inputFile").click(function(){
 				$("#habOpcao").hide("slow");  
 
-				document.getElementById("delete").className = "desabilitado";
+				document.getElementById("delete").className = "buttonToolbar";
 				del=false;
-				document.getElementById("move").className = "desabilitado";
+				document.getElementById("move").className = "buttonToolbar";
 				move=false;
 
 				document.getElementById("keyboard").className = "buttonToolbar";

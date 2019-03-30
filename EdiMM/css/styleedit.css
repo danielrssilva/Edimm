@@ -25,6 +25,10 @@ html, body{
     background: hsl(0, 0%, 100%);
     color: black;
 }
+/* 860 */
+/* .nav-header{
+    width: 100%;
+} */
 .fixed-bar{
     float: right;
 }
@@ -38,10 +42,13 @@ html, body{
     margin-left: 0;
     padding-bottom: 2.5px;
 }
+.btn-default:hover{
+    background: none;
+}
 .color-picker{
     margin-top: 4px;
     padding: 0;
-    border-radius: 50% 50% 50% 0;
+    border-radius: 50% 50% 50% 20%;
     transform: rotate(135deg);
     width: 17px;
     height: 17px;
@@ -187,4 +194,62 @@ legend.scheduler-border {
     font-size: 0.8em !important;
     font-weight: bold !important;
     text-align: center !important;
+}
+
+/* Sidebar Styles */
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 360px;
+    margin: 0;
+    padding: 0;
+}
+.sidebar-nav li {
+    text-indent: 5px;
+}
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 20px;
+    line-height: 60px;
+}
+.sidebar-nav > .sidebar-brand a {
+    color: #fff;
+
+}
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 0;
+    }
+    #wrapper.toggled {
+        padding-left: 380px;
+    }
+    #sidebar-wrapper {
+        width: 0;
+		height: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 380px;
+    }
+    #page-content-wrapper {
+        padding: 0px;
+        position: fixed;	
+		margin-bottom: 0;
+    }
+    #wrapper.toggled #page-content-wrapper {
+        position: fixed;
+        margin-right: 0;
+    }
 }
