@@ -37,7 +37,6 @@
 
 	<!-- CSS -->
 	<link href="css/styleedit.css" rel="stylesheet">
-    <link href="css/stylesidebar.css" rel="stylesheet">
 
 	<!-- JS -->
 	<script type="text/javascript" src="js/jquerystackblur.js"></script>
@@ -117,17 +116,11 @@
 					<li>
 						<fieldset class="scheduler-border" id="paletaCores">
 						<legend class="scheduler-border"></legend>
-						<li><a title="Paleta de Cores" class="buttonToolbar a-color-picker"><input type="color" onchange="setColor(this.value);" class="color-picker"></a>
+						<li id="colorSelect"><a title="Paleta de Cores" class="buttonToolbar a-color-picker"><input type="color" onchange="setColor(this.value);" class="color-picker"></a>
 						</fieldset>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav fixed-bar">
-						<li>
-							<fieldset class="scheduler-border" id ="habOpcao">
-							<legend class="scheduler-border"></legend>
-							<li class="buttonToolbar"><span id="selecionado"></span></li>
-							</fieldset>
-						</li>
 						<li>
 							<fieldset class="scheduler-border" id ="habEspessSpan">
 							<legend class="scheduler-border"></legend>
@@ -135,23 +128,23 @@
 							</fieldset>
 						</li>
 						<li>
-							<fieldset class="scheduler-border" id ="habOpcao">
+							<fieldset class="scheduler-border">
 							<legend class="scheduler-border"></legend>
 							<a title="Excluir Componente" id="delete" class="buttonToolbar"><img src="images/3delete.png" width="22"></a>
 							</fieldset>
 						</li>
 						<li>
-							<fieldset class="scheduler-border" id ="habOpcao">
+							<fieldset class="scheduler-border">
 							<legend class="scheduler-border"></legend>
 							<a data-toggle="dropdown" title="Opções" id="display" class="buttonToolbar"><img src="images/5salvararquivo.svg" width="22"><span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="javascript:saveIt();" class="fontnormal"><img src="images/link.svg" width="22">Salvar link</a>
-							<li><a href="javascript:imageIt();" class="fontnormal"><img src="images/5image.svg" width="22"> Salvar em PNG </a>
-							<li><a href="javascript:pdfIt();" class="fontnormal"><img src="images/5pdf.svg" width="22"> Salvar em PDF </a>
-						</ul>
-						</fieldset>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:saveIt();" class="fontnormal"><img src="images/link.svg" width="22">Salvar link</a>
+								<li><a href="javascript:imageIt();" class="fontnormal"><img src="images/5image.svg" width="22"> Salvar em PNG</a>
+								<li><a href="javascript:pdfIt();" class="fontnormal"><img src="images/5pdf.svg" width="22"> Salvar em PDF</a>
+							</ul>
+							</fieldset>
 						<li>
-							<fieldset class="scheduler-border" id ="habOpcao">
+							<fieldset class="scheduler-border">
 							<legend class="scheduler-border"></legend>
 							<a data-toggle="dropdown" title="Configuração" class="buttonToolbar"><img src="images/3conf.svg" width="22"><span class="caret"></span></a>
 							<ul class="dropdown-menu dropdown-menu-right">
@@ -184,7 +177,7 @@
 						</li>
 					</li>
 					<li>
-						<fieldset class="scheduler-border" id ="habOpcao">
+						<fieldset class="scheduler-border">
 						<legend class="scheduler-border"></legend>
 						<a title="Touchscreen" id="touch" class="buttonToolbar"><img src="images/3touchscreen.svg" width="22"></a></li>
 						</fieldset>
@@ -203,9 +196,9 @@
 								<div id="nav">
 									<ul class="nav nav-pills nav-stacked">
 										<li><a class="buttonToolbar" title="Escrever Texto" id="keyboard"><img src="images/6text.svg" width="20"></a></li>
-										<li><a class="buttonToolbar" title="Caixa de Texto" id="keybox"><img src="images/6boxtext.png" width="20"></a></li>
+										<li><a class="buttonToolbar" title="Caixa de Texto" id="keybox"><img src="images/6boxtext.svg" width="20"></a></li>
 										<li><a class="buttonToolbar" title="Desenho Livre" id="draw"><img src="images/6thicknessdrawing.svg" width="20"></a></li>
-										<li><a data-toggle="dropdown" href="#" class="buttonToolbar" title="Formas Geometricas"><img src="images/6geometric.svg" width="20"><span class="caret"></span></a>
+										<li><a data-toggle="dropdown" href="#" class="buttonToolbar" title="Formas Geometricas" id="formasUl"><span id="selecionado"><img src="images/6geometric.svg" width="20"></span><span class="caret"></span></a>
 											<ul class="dropdown-menu" id="geometricshapes">
 												<li><a title="Pontos" id="drop"><img src="images/2drop.svg" width="15"></a></li>
 												<li><a title="Circulo" id="circle"><img src="images/2circle.svg" width="15"></a></li>

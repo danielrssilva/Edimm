@@ -1452,10 +1452,10 @@
 						text.innerHTML = temp;
 					break;
 					case 'Enter':
-
+						text.innerHTML = 'batata';
 					break;
 					default:
-						text.innerHTML = temp + event.key;
+						text.innerHTML = temp + 'a';
 					break;
 				}
 				pressedKey = String.fromCharCode(event.which || event.keyCode); // Use API to recognize keyboard characters
@@ -1538,13 +1538,14 @@
 			// Manages keyboard events
 			switch(event.key) {
 				case 'Shift':
+					text.innerHTML = '';
 				break;
 				case 'Backspace':
 					temp = temp.slice(0,-2);
 					text.innerHTML = temp;
 				break;
 				case 'Enter':
-
+					text.innerHTML = '';
 				break;
 				default:
 					text.innerHTML = temp + event.key;
@@ -2243,6 +2244,7 @@
 
 		function readURL(event) { // Function responsible for creating the image element
 			//nwse-resize
+			document.getElementById("svgDiv").style.cursor = "nwse-resize";
 			var reader = new FileReader();
 			removeEventListenerFromSVG(numberOfEventListener);
 			numberOfEventListener = 10; // Pass number 10 in function parameter
@@ -2292,7 +2294,7 @@
 				imageArray[idTouch].setAttribute('y', startY); // Add the position y of the element
 				imageArray[idTouch].setAttribute('fill', "none"); // Add background color to element
 				imageArray[idTouch].setAttribute('width', 0); // Add width element
-				imageArray[idTouch].setAttribute('height', 0); // Add height element
+				imageArray[idTouch].setAttribute('height: 55px'); // Add height element
 				imageArray[idTouch].setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', receivedImage); // Add to receivedImage
 				svg.appendChild(imageArray[idTouch]); // Add element to svg
 				isMousePressed = true; // Get true
@@ -2346,7 +2348,7 @@
 		function startURL(event){
 			startX = event.clientX; // Specifies the x-axis on the screen
 			startY = event.clientY - screenYCorrection; // Specifies the y-axis on the screen
-			
+			defaultCursor();
 			image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
 			
 			image.setAttribute('x', startX); // Add the position x of the element
@@ -2399,6 +2401,7 @@
 		
 		function readURLAudio(event) { // Function responsible for creating the image element
 			var reader = new FileReader();
+			document.getElementById("svgDiv").style.cursor = "url('images/audio.svg') 15 15, auto";
 			removeEventListenerFromSVG(numberOfEventListener);
 			numberOfEventListener = 12; // Pass number 12 in function parameter
 
@@ -2448,7 +2451,7 @@
 				fobject.setAttribute('x', startX); // Add the position x of the element
 				fobject.setAttribute('y', startY); // Add the position y of the element
 				fobject.setAttribute('width', "300px"); // Add width element
-				fobject.setAttribute('height', "30px"); // Add height element
+				fobject.setAttribute('height', "55px"); // Add height element
 				swit.appendChild(fobject); // Add element to swit
 				
 				bod = document.createElementNS('http://www.w3.org/1999/xhtml', 'body');
@@ -2525,7 +2528,7 @@
 			fobject.setAttribute('x', startX); // Add the position x of the element
 			fobject.setAttribute('y', startY); // Add the position y of the element
 			fobject.setAttribute('width', "300px"); // Add width element
-			fobject.setAttribute('height', "30px"); // Add height element
+			fobject.setAttribute('height', "55px"); // Add height element
 			swit.appendChild(fobject); // Add element to swit
 			
 			bod = document.createElementNS('http://www.w3.org/1999/xhtml', 'body');
@@ -2869,13 +2872,13 @@
 	        var paper = Raphael(viewElementG, 1800, 800); // Add element to viewElementG
 			// Rectangle to move a textbox
 			paper.rect(sx, sy); // Add the position x and y of the element
-            var text = paper.text(sx, sy, 'Click to edit').attr({'text-finally': fontLetter, 'font-size': sizeLetter, 'font-style': styleLetter,'text-decoration': decorationLetter,'stroke': colorStrokeLetter,'fill': colorBoot}).transform(['R', 0, 'S', 1, 1]);
+            var text = paper.text(sx, sy, 'Clique para editar.').attr({'text-finally': fontLetter, 'font-size': sizeLetter, 'font-style': styleLetter,'text-decoration': decorationLetter,'stroke': colorStrokeLetter,'fill': colorBoot}).transform(['R', 0, 'S', 1, 1]);
 			
 			// Initialize text editing for the text element
 			paper.inlineTextEditing(text);
 
 			// Start inline editing on click
-			text.dblclick(function(){
+			text.click(function(){
 			// Retrieve created <input type=text> field
 			var input = this.inlineTextEditing.startEditing();
 

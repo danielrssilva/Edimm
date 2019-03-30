@@ -25,10 +25,6 @@ html, body{
     background: hsl(0, 0%, 100%);
     color: black;
 }
-/* 860 */
-/* .nav-header{
-    width: 100%;
-} */
 .fixed-bar{
     float: right;
 }
@@ -45,6 +41,12 @@ html, body{
 .btn-default:hover{
     background: none;
 }
+a.a-color-picker{
+    cursor: default;
+}
+.custom-cursor{
+    cursor: default;
+}
 .color-picker{
     margin-top: 4px;
     padding: 0;
@@ -52,6 +54,7 @@ html, body{
     transform: rotate(135deg);
     width: 17px;
     height: 17px;
+    cursor: pointer;
 }
 .color-picker::-webkit-color-swatch-wrapper {
     border: none;

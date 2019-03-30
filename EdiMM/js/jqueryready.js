@@ -28,7 +28,7 @@
 		var negrito=false;
 		var sublinhado=false;
 		var italico=false;
-		var testand = [
+		var fonts = [
 			{
 				name: "Arial",
 				id: "arial"
@@ -99,10 +99,10 @@
 			}
 		];
 		(function(){
-			var ulFonts = document.getElementById("font-family");
-			testand.forEach(font => {
-				var li = document.createElement("li");
-				var liA = document.createElement("a");
+			let ulFonts = document.getElementById("font-family");
+			fonts.forEach(font => {
+				let li = document.createElement("li");
+				let liA = document.createElement("a");
 				liA.setAttribute("href", "javascript:setFontText('"+font.id+"','"+font.name+"');");
 				liA.setAttribute("id", font.id);
 				liA.append(font.name);
@@ -112,11 +112,11 @@
 		})();
 		// Adicionar espessura da linha
 		(function(){
-			var lineWeightDropdown = document.getElementById("line-weight");
+			let lineWeightDropdown = document.getElementById("line-weight");
 			for(i=1;i<=10;i++){
-				var li = document.createElement("li");
-				var liA = document.createElement("a");
-				var liDiv = document.createElement("div");
+				let li = document.createElement("li");
+				let liA = document.createElement("a");
+				let liDiv = document.createElement("div");
 				liA.setAttribute("href", "javascript:setWidth("+i+");");
 				liA.setAttribute("title", ""+i+"px");
 				if(i<10){
@@ -132,17 +132,14 @@
 				liA.appendChild(liDiv);
 				li.appendChild(liA); 
 				lineWeightDropdown.appendChild(li);
-				if(i===3){
-					linha = liDiv;
-				}
 			}
 		})();
 		// Adicionar tamanho da fonte
 		(function(){
-			var textSize = document.getElementById("text-size");
+			let textSize = document.getElementById("text-size");
 			for(i=10;i<=48;){
-				var li = document.createElement("li");
-				var liA = document.createElement("a");
+				let li = document.createElement("li");
+				let liA = document.createElement("a");
 				liA.setAttribute("href", "javascript:setSizeText("+i+");");
 				liA.setAttribute("id", "tamanho"+i);
 				liA.setAttribute("class", "tamanho");
@@ -152,7 +149,18 @@
 				i += 2;
 			}
 		})();
-
+		changeShapeImg = function(){
+			document.getElementById('selecionado').innerHTML = '<img src="images/6geometric.svg" width="20">';
+		};
+		changeBtnClicked= function (element){
+			element.className = "btn btn-default";
+		};
+		changeBtnNotClicked= function (element){
+			element.className = "buttonToolbar";
+		};
+		defaultCursor= function (){
+			document.getElementById("svgDiv").style.cursor = "default";
+		}
 		$( document ).ready(function(){
 
 			$("#habFont").hide("slow");   	  
@@ -160,44 +168,44 @@
 			$("#habMedida").hide("slow"); 	  
 			$("#habOpcao").hide("slow");  	  
 			$("#habMedidaSpan").hide("slow"); 
-			$("#habFontSpan").hide("slow");   
+			$("#habFontSpan").hide("slow");
 
-
-			$("#linha").html(linha);
+			$("#linha").html($("#line03"));
 
 			$("#medida").html("20");
 
 			$("#font").html("Arial");
 
-			document.getElementById("draw").className = "btn btn-default";
+			changeBtnClicked(document.getElementById("draw"));
+			document.getElementById("svgDiv").style.cursor = "url('images/drawingcursor.svg') 6 20, auto";
 
 	//======================================================================================
 
 			$("#negrito").click(function(){
 				if(negrito==false){
-					document.getElementById("negrito").className = "btn btn-default";
+					changeBtnClicked(document.getElementById("negrito"));
 					document.getElementById("negrito").href = "javascript:setStrokeText();";
 					negrito=true;
 				}else{
-					document.getElementById("negrito").className = "buttonToolbar";
+					changeBtnNotClicked(document.getElementById("negrito"));
 					negrito=false;
 				}
 			});
 
 			$("#sublinhado").click(function(){
 				if(sublinhado==false){
-					document.getElementById("sublinhado").className = "btn btn-default";
+					changeBtnClicked(document.getElementById("sublinhado"));
 					document.getElementById("sublinhado").href = "javascript:setDecoration();";
 					sublinhado=true;
 				}else{
-					document.getElementById("sublinhado").className = "buttonToolbar";
+					changeBtnNotClicked(document.getElementById("sublinhado"));
 					sublinhado=false;
 				}
 			});
 
 			$("#italico").click(function(){
 				if(italico==false){
-					document.getElementById("italico").className = "btn btn-default";
+					changeBtnClicked(document.getElementById("italico"));
 					document.getElementById("italico").href = "javascript:setStyle();";
 					italico=true;
 				}else{
@@ -209,20 +217,16 @@
 	//======================================================================================
 
 			$("#move").click(function(){
-
-				document.getElementById("circle").className = "buttonToolbar";
-				document.getElementById("drop").className = "buttonToolbar";
-				document.getElementById("square").className = "buttonToolbar";
-				document.getElementById("ellipse").className = "buttonToolbar";
-				document.getElementById("line").className = "buttonToolbar";
+				changeShapeImg();
 
 				if(move==false){
-					document.getElementById("move").className = "btn btn-default";
+					changeBtnClicked(document.getElementById("move"));
 					document.getElementById("move").href = "javascript:moveIt();";
+					document.getElementById("svgDiv").style.cursor = "url('images/3move.svg'), auto";
 					move=true;
 				}else{
-					document.getElementById("move").className = "buttonToolbar";
-					document.getElementById("move").href = "javascript:desabilitado();";
+					changeBtnNotClicked(document.getElementById("move"));
+					defaultCursor();
 					move=false;
 				}
 
@@ -236,29 +240,25 @@
 				$("#habFontSpan").hide("slow");    
 				$("#habEspess").hide("slow");      
 
-				document.getElementById("delete").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("delete"));
 				del=false;
-				document.getElementById("keyboard").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keyboard"));
 				key=false;
-				document.getElementById("draw").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("draw"));
 				draw=false;
 			});
-
 			$("#delete").click(function(){
 
-				document.getElementById("circle").className = "buttonToolbar";
-				document.getElementById("drop").className = "buttonToolbar";
-				document.getElementById("square").className = "buttonToolbar";
-				document.getElementById("ellipse").className = "buttonToolbar";
-				document.getElementById("line").className = "buttonToolbar";
+				changeShapeImg();
 
 				if(del==false){
-					document.getElementById("delete").className = "btn btn-default";
+					changeBtnClicked(document.getElementById("delete"));
 					document.getElementById("delete").href = "javascript:deleteIt();";
+					document.getElementById("svgDiv").style.cursor = "url('images/3deletecursor.svg'), auto";
 					del=true;
 				}else{
-					document.getElementById("delete").className = "buttonToolbar";
-					document.getElementById("delete").href = "javascript:desabilitado();";
+					changeBtnNotClicked(document.getElementById("delete"));
+					defaultCursor();
 					del=false;
 				}
 
@@ -272,11 +272,11 @@
 				$("#habFontSpan").hide("slow");    
 				$("#habEspess").hide("slow");      
 
-				document.getElementById("move").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("move"));
 				move=false;
-				document.getElementById("keyboard").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keyboard"));
 				key=false;
-				document.getElementById("draw").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("draw"));
 				draw=false;
 			});
 
@@ -287,11 +287,11 @@
 
 			$("#touch").click(function(){
 				if(touch==false){
-					document.getElementById("touch").className = "btn btn-default";
+					changeBtnClicked(document.getElementById("touch"));
 					document.getElementById("touch").href = "javascript:device();";
 					touch=true;
 				}else{
-					document.getElementById("touch").className = "buttonToolbar";
+					changeBtnNotClicked(document.getElementById("touch"));
 					touch=false;
 				}
 			});
@@ -308,31 +308,27 @@
 				$("#paletaCores").show("slow");    
 				$("#habEspessSpan").hide("slow");  
 				$("#habEspess").hide("slow"); 	   
-				$("#habOpcao").hide("slow");  	   
-
-				document.getElementById("circle").className = "buttonToolbar";
-				document.getElementById("drop").className = "buttonToolbar";
-				document.getElementById("square").className = "buttonToolbar";
-				document.getElementById("ellipse").className = "buttonToolbar";
-				document.getElementById("line").className = "buttonToolbar";
+				$("#habOpcao").hide("slow");  
+				changeShapeImg();	   
 
 				if(key==false){
-					document.getElementById("keyboard").className = "btn btn-default";
+					changeBtnClicked(document.getElementById("keyboard"));
 					document.getElementById("keyboard").href = "javascript:createWrite();";
+					document.getElementById("svgDiv").style.cursor = "text";
 					key=true;
 				}else{
-					document.getElementById("keyboard").className = "buttonToolbar";
-					document.getElementById("keyboard").href = "javascript:desabilitado();";
+					changeBtnNotClicked(document.getElementById("keybox"));
+					defaultCursor();
 					key=false;
 				}
 
-				document.getElementById("keybox").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keybox"));
 				keybox=false;
-				document.getElementById("draw").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("draw"));
 				draw=false;
-				document.getElementById("move").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("move"));
 				move=false;
-				document.getElementById("delete").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("delete"));
 				del=false;
 			});
 
@@ -346,24 +342,20 @@
 				$("#paletaCores").show("slow");    
 				$("#habEspessSpan").hide("slow");  
 				$("#habEspess").hide("slow"); 	   
-				$("#habOpcao").hide("slow");  	   
+				$("#habOpcao").hide("slow");  
+				changeShapeImg();	   
 
-				document.getElementById("circle").className = "buttonToolbar";
-				document.getElementById("drop").className = "buttonToolbar";
-				document.getElementById("square").className = "buttonToolbar";
-				document.getElementById("ellipse").className = "buttonToolbar";
-				document.getElementById("line").className = "buttonToolbar";
-
-				document.getElementById("keyboard").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keyboard"));
 				key=false;
-				document.getElementById("draw").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("draw"));
 				draw=false;
-				document.getElementById("move").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("move"));
 				move=false;
-				document.getElementById("delete").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("delete"));
 				del=false;
 
 				document.getElementById("keybox").href = "javascript:createBoxText();";
+				document.getElementById("svgDiv").style.cursor = "text";
 
 			});
 
@@ -376,67 +368,60 @@
 				$("#habFontSpan").hide("slow");    
 				$("#paletaCores").show("slow");    
 				$("#habEspessSpan").show("slow");  
-				$("#habEspess").show("slow"); 	   
-
-				document.getElementById("circle").className = "buttonToolbar";
-				document.getElementById("drop").className = "buttonToolbar";
-				document.getElementById("square").className = "buttonToolbar";
-				document.getElementById("ellipse").className = "buttonToolbar";
-				document.getElementById("line").className = "buttonToolbar";
+				$("#habEspess").show("slow"); 
+				changeShapeImg();
 
 				if(draw==false){
-					document.getElementById("draw").className = "btn btn-default";
+					changeBtnClicked(document.getElementById("draw"));
 					document.getElementById("draw").href = "javascript:createDraw();";
+					document.getElementById("svgDiv").style.cursor = "url('images/drawingcursor.svg') 6 20, auto";
 					draw=true;
 				}else{
-					document.getElementById("draw").className = "buttonToolbar";
-					document.getElementById("draw").href = "javascript:desabilitado();";
+					changeBtnNotClicked(document.getElementById("draw"));
+					defaultCursor();
 					draw=false;
 				}
 
-				document.getElementById("keyboard").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keyboard"));
 				key=false;
-				document.getElementById("keybox").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keybox"));
 				keybox=false;
-				document.getElementById("move").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("move"));
 				move=false;
-				document.getElementById("delete").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("delete"));
 				del=false;
 
 			});
 
 			$("#geometricshapes").click(function(){
-				$("#habFont").hide("slow");   	  
-				$("#habEstilo").hide("slow"); 	  
-				$("#habMedida").hide("slow"); 	  
-				$("#habMedidaSpan").hide("slow"); 
-				$("#habFontSpan").hide("slow");   
-				$("#paletaCores").show("slow");   
-				$("#habEspess").show("slow"); 	  
-				$("#habOpcao").show("slow"); 	  
-				$("#habEspessSpan").show("slow"); 
+				$("#habFont").hide("slow");
+				$("#habEstilo").hide("slow");
+				$("#habMedida").hide("slow");
+				$("#habMedidaSpan").hide("slow");
+				$("#habFontSpan").hide("slow");
+				$("#paletaCores").show("slow");
+				$("#habEspess").show("slow");
+				$("#habOpcao").show("slow");
+				$("#habEspessSpan").show("slow");
+				// changeBtnClicked($('#formasUl'));
 			});
 
 			$("#drop").click(function(){
 				var img = $(this).find("img").clone();
 				$("#selecionado").html(img);
-
-				document.getElementById("circle").className = "buttonToolbar";
-				document.getElementById("square").className = "buttonToolbar";
-				document.getElementById("ellipse").className = "buttonToolbar";
-				document.getElementById("line").className = "buttonToolbar";
+				document.getElementById("svgDiv").style.cursor = "url('images/2drop.svg') 15 15, auto";
 
 				document.getElementById("drop").href = "javascript:createPonto();";
 
-				document.getElementById("delete").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("delete"));
 				del=false;
-				document.getElementById("move").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("move"));
 				move=false;
-				document.getElementById("keyboard").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keyboard"));
 				key=false;
-				document.getElementById("keybox").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keybox"));
 				keybox=false;
-				document.getElementById("draw").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("draw"));
 				draw=false;
 			});
 
@@ -444,22 +429,18 @@
 				var img = $(this).find("img").clone();
 				$("#selecionado").html(img);
 
-				document.getElementById("drop").className = "buttonToolbar";
-				document.getElementById("square").className = "buttonToolbar";
-				document.getElementById("ellipse").className = "buttonToolbar";
-				document.getElementById("line").className = "buttonToolbar";
-
 				document.getElementById("circle").href = "javascript:createCircle();";
+				defaultCursor();
 
-				document.getElementById("delete").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("delete"));
 				del=false;
-				document.getElementById("move").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("move"));
 				move=false;
-				document.getElementById("keyboard").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keyboard"));
 				key=false;
-				document.getElementById("keybox").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keybox"));
 				keybox=false;
-				document.getElementById("draw").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("draw"));
 				draw=false;
 			});
 
@@ -467,22 +448,18 @@
 				var img = $(this).find("img").clone();
 				$("#selecionado").html(img);
 
-				document.getElementById("circle").className = "buttonToolbar";
-				document.getElementById("drop").className = "buttonToolbar";
-				document.getElementById("ellipse").className = "buttonToolbar";
-				document.getElementById("line").className = "buttonToolbar";
-
 				document.getElementById("square").href = "javascript:createRectangle();";
+				defaultCursor();
 
-				document.getElementById("delete").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("delete"));
 				del=false;
-				document.getElementById("move").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("move"));
 				move=false;
-				document.getElementById("keyboard").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keyboard"));
 				key=false;
-				document.getElementById("keybox").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keybox"));
 				keybox=false;
-				document.getElementById("draw").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("draw"));
 				draw=false;
 			});
 
@@ -490,22 +467,18 @@
 				var img = $(this).find("img").clone();
 				$("#selecionado").html(img);
 
-				document.getElementById("circle").className = "buttonToolbar";
-				document.getElementById("drop").className = "buttonToolbar";
-				document.getElementById("square").className = "buttonToolbar";
-				document.getElementById("line").className = "buttonToolbar";
-
 				document.getElementById("ellipse").href = "javascript:createEllipse();";
+				defaultCursor();
 
-				document.getElementById("delete").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("delete"));
 				del=false;
-				document.getElementById("move").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("move"));
 				move=false;
-				document.getElementById("keyboard").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keyboard"));
 				key=false;
-				document.getElementById("keybox").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keybox"));
 				keybox=false;
-				document.getElementById("draw").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("draw"));
 				draw=false;
 			});
 
@@ -513,45 +486,40 @@
 				var img = $(this).find("img").clone();
 				$("#selecionado").html(img);
 
-				document.getElementById("circle").className = "buttonToolbar";
-				document.getElementById("drop").className = "buttonToolbar";
-				document.getElementById("square").className = "buttonToolbar";
-				document.getElementById("ellipse").className = "buttonToolbar";
-
 				document.getElementById("line").href = "javascript:createLine();";
+				defaultCursor();
 
-				document.getElementById("delete").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("delete"));
 				del=false;
-				document.getElementById("move").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("move"));
 				move=false;
-				document.getElementById("keyboard").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keyboard"));
 				key=false;
-				document.getElementById("keybox").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keybox"));
 				keybox=false;
-				document.getElementById("draw").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("draw"));
 				draw=false;
 			});
 
 			$("#inputFile").click(function(){
 				$("#habOpcao").hide("slow");  
-
-				document.getElementById("delete").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("delete"));
 				del=false;
-				document.getElementById("move").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("move"));
 				move=false;
 
-				document.getElementById("keyboard").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keyboard"));
 				key=false;
-				document.getElementById("draw").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("draw"));
 				draw=false;
 
-				document.getElementById("negrito").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("negrito"));
 				negrito=false;
-				document.getElementById("sublinhado").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("sublinhado"));
 				sublinhado=false;
-				document.getElementById("keybox").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("keybox"));
 				keybox=false;
-				document.getElementById("italico").className = "buttonToolbar";
+				changeBtnNotClicked(document.getElementById("italico"));
 				italico=false;
 			});
 			
