@@ -44,9 +44,6 @@ html, body{
 a.a-color-picker{
     cursor: default;
 }
-.custom-cursor{
-    cursor: default;
-}
 .color-picker{
     margin-top: 4px;
     padding: 0;

@@ -1116,6 +1116,7 @@
 				deleteRect.setAttribute('fill', "none"); // Add background color to element
 				deleteRect.setAttribute('stroke', "red"); // Add a red color to the element
 				deleteRect.setAttribute('stroke-width', "1"); // Add a thickness to the element
+				deleteRect.setAttribute('stroke-dasharray', "10");
 				svg.appendChild(deleteRect); // Add element to svg
 				isMousePressed = true; // Get true
 			}
@@ -1162,6 +1163,7 @@
 			deleteRect.setAttribute('fill', "none"); // Add background color to element
 			deleteRect.setAttribute('stroke', "red"); // Add a red color to the element
 			deleteRect.setAttribute('stroke-width', "1"); // Add a thickness to the element
+			deleteRect.setAttribute('stroke-dasharray', "10");
 			svg.appendChild(deleteRect); // Add element to svg
 			isMousePressed = true; // Get true
 			event.preventDefault(); // Prevents an additional event being triggered
@@ -2582,12 +2584,14 @@
 			isMousePressed = false; // Get false
 			saveImage(); // Save layout
 			event.preventDefault(); // Prevents an additional event being triggered
+			defaultCursor();
 		}
 		
 		//============================================================================
 		//video
 		
 		function readURLVideo(event) { // Function responsible for creating the image element
+			document.getElementById("svgDiv").style.cursor = "url('images/video.svg'), auto";
 			var reader = new FileReader();
 			removeEventListenerFromSVG(numberOfEventListener);
 			numberOfEventListener = 13; // Pass number 13 in function parameter
@@ -2638,8 +2642,8 @@
 				fobject = document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject');
 				//fobject.setAttribute('x', startX); // Add the position x of the element
 				//fobject.setAttribute('y', startY); // Add the position y of the element
-				fobject.setAttribute('width', "320px"); // Add width element
-				fobject.setAttribute('height', "240px"); // Add height element
+				fobject.setAttribute('width', "620px"); // Add width element
+				fobject.setAttribute('height', "540px"); // Add height element
 				swit.appendChild(fobject); // Add element to swit
 				
 				bod = document.createElementNS('http://www.w3.org/1999/xhtml', 'body');
@@ -2740,8 +2744,8 @@
 				fobject.setAttribute('y', startY); // Add the position y of the element
 			}
 			
-			fobject.setAttribute('width', "320px"); // Add width element
-			fobject.setAttribute('height', "240px"); // Add height element
+			fobject.setAttribute('width', "620px"); // Add width element
+			fobject.setAttribute('height', "540px"); // Add height element
 			swit.appendChild(fobject); // Add element to swit
 			
 			bod = document.createElementNS('http://www.w3.org/1999/xhtml', 'body');
@@ -2752,7 +2756,11 @@
 			if(!isFirefox){
 				video.setAttribute('style',"margin: "+startY+"px 0 0 "+startX+"px;");
 			}
-			video.setAttribute('controls','controls');
+			video.setAttribute('controls','');
+			video.setAttribute('autoplay','');
+			video.setAttribute('loop','');
+			video.style.zIndex = "99999";
+			
 			bod.appendChild(video); // Add element to body
 			
 			contrls = document.createElementNS('http://www.w3.org/1999/xhtml', 'source');
@@ -2798,6 +2806,7 @@
 			isMousePressed = false; // Get false
 			saveImage(); // Save layout
 			event.preventDefault(); // Prevents an additional event being triggered
+			defaultCursor();
 		}
 		
 		//============================================================================
@@ -3256,7 +3265,7 @@
 
 		function setWidth(val) { // Function responsible for initializing element width
 			widthBoot = val; // Get width
-			document.getElementById("linha").innerHTML = "<div class='line' style='height: "+val+"px;'></div>";
+			document.getElementById("linha").innerHTML = "<div class='line' style='height: "+val+"px;' id='linhaspan'></div>";
 		}
 
 		//============================================================================
